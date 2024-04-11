@@ -1,0 +1,71 @@
+.bg_wave1 {
+  background-image: url(../../../../assets/icons/wave.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: 15rem;
+  z-index: -1;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.bg_wave2 {
+  background-image: url(../../../../assets/icons/wave2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  height: 15rem;
+  z-index: -1;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 1px 6px 5px 1px rgba(163, 93, 196, 0.717);
+  -webkit-box-shadow: 1px 6px 5px 1px rgba(163, 93, 196, 0.717);
+  -moz-box-shadow: 1px 6px 5px 1px rgba(163, 93, 196, 0.717);
+  margin-top: 2rem;
+}
+
+.svg {
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.7));
+  margin: 10px;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav li {
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+  color: rgb(251, 240, 255);
+  font-size: x-large;
+  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.9));
+}
+
+@media (max-width: 950px) {
+  .nav li {
+    display: none;
+  }
+}
+
+.link {
+  text-decoration: none;
+  height: 0;
+}
+
+.link:hover {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgb(96, 15, 107);
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.8);
+  filter: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.9));
+}
