@@ -147,7 +147,7 @@ export default function Loading() {
             <img ref={logo} className='loading-logo' src='images/logo.svg' alt='Logo' />
           ) : (
             // After initial load, show the SVG
-            <div></div>
+            <div>hiiiiii</div>
           )}
 
         </div>
