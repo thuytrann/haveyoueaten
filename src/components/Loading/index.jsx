@@ -147,7 +147,7 @@ export default function Loading() {
             <img ref={logo} className='loading-logo' src='images/logo.svg' alt='Logo' />
           ) : (
             // After initial load, show the SVG
-            <div>hiiiiii</div>
+            <div></div>
           )}
 
         </div>
@@ -174,9 +174,7 @@ export default function Loading() {
           </svg>
           
             </div>
-            <div className='load-item'>
-            <p>a web experience</p>
-            </div>
+            <div className='load-item'><p>Loading {progress}%</p></div>
           
             
           </div>

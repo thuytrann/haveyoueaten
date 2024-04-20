@@ -17,17 +17,21 @@
     src: url("/fonts/DFVN36daysoftype.otf"); }
 
   html {
-    width: 100vw; }
+    width: 100vw; 
+    cursor: none !important;
+  }
   
   * {
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border-box; }
+    box-sizing: border-box; 
+    cursor: none;}
   
   body {
-  
-    font-family: "proxima-nova", sans-serif; }
+    cursor: none;
+    font-family: "proxima-nova", sans-serif; 
+    color: #000; }
 
     .spinner-wrapper{
         height: 100vh;
@@ -78,7 +82,7 @@
         left: 50%;
         padding: 0 10vw;
         transform: translate(-50%,-50%);
-        gap: 400px;
+        gap: 45vw;
         overflow: clip;
       }
       .spinner, .loading-info{
@@ -96,7 +100,7 @@
         
         text-transform: uppercase;
         text-align: center;
-        font-size: 10pt;
+        font-size: 11pt;
         line-height: 100%;
         
       }
@@ -137,7 +141,7 @@ transition: animation .2s ease;
       }
 
       .load-item{
-        width: 120px;
+        width: 140px;
         height: 100px;
         display: flex;
         justify-content: center;
@@ -165,12 +169,36 @@ transition: animation .2s ease;
         bottom: 20px;
       }
 
+.transition-lb{
+  width: 100vw;
+  height: 100vh;
+  /*background-color: #3C3A8E;*/
+}
+
 .prefetch, .prefetch img{
 
     visibility: hidden;
 }
+
+.btn{
+  color:  #FF540F;
+
+text-align: center;
+width: fit-content;
+
+font-size: 10pt;
+font-style: normal;
+font-weight: 400;
+
+letter-spacing: 1.76px;
+text-transform: uppercase;
+border-radius: 50px;
+border: 1px solid #FF540F;
+}
   
     .background{
+      
+      width: 100vw;
       background: radial-gradient(50% 50% at 50% 50%, #E1EAD7 67.5%, #FF540F 100%);
   }
   
@@ -187,7 +215,10 @@ transition: animation .2s ease;
       background-size: 100%;
       background-repeat: no-repeat;
   }
-  
+  .by-boat {
+    background: transparent;
+    height:800vh;
+}
   .kitchen {
       background: url("/images/Bango.jpeg");
       background-position: bottom;
@@ -655,6 +686,8 @@ transition: animation .2s ease;
     height: 100vh;
     width: 100vw; 
     z-index: 0;
+    top:5vh;
+    cursor: none;
 }
   
   .inner-food-container {
@@ -670,16 +703,20 @@ transition: animation .2s ease;
   
   .drag-food-item img {
     float: left; 
+    cursor: none;
   
 }
 
   
   .drag-food-img {
+    cursor: none;
     width: 22vw; }
   
   #tocom .drag-food-img {
     position: absolute;
-    width: 100%; }
+    width: 100%;
+    cursor: none;
+   }
 
   .other-bowls{
     width: 100vw;
@@ -733,7 +770,9 @@ transition: animation .2s ease;
     position: absolute;
     z-index: 5;
     top: 50%;
-    left: 50%; }
+    left: 50%; 
+    cursor: none;
+  }
 
 .canh-stages{
   width: 120%;
@@ -832,7 +871,7 @@ transition: animation .2s ease;
   /* QUIZ PORTION */
   .quiz-container {
     display: flex;
-    width: 65vw;
+    width: 80vw;
     height: 24vh;
     position: absolute;
     background-color: #F5FFB8;
@@ -853,7 +892,7 @@ transition: animation .2s ease;
     height: 12px; }
   
   .q-border-horizontal-2 {
-    width: calc(65vw + 24px); }
+    width: calc(80vw + 24px); }
   
   .bor1 {
     top: -24px;
@@ -888,7 +927,7 @@ transition: animation .2s ease;
     width: 100%; }
   
   .quiz-question {
-    font-size: 36px;
+    font-size: 32px;
     position: absolute;
     letter-spacing: -1.2px;
     font-weight: 600;
@@ -918,6 +957,9 @@ transition: animation .2s ease;
   .outline-text {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black; }
+    .outline-text-2 {
+      -webkit-text-stroke-width: 1.5px;
+      -webkit-text-stroke-color: black; }
   
   .outline-text span {
     -webkit-text-stroke-width: 0.1px;
@@ -1002,7 +1044,7 @@ transition: animation .2s ease;
     text-align: center;
     pointer-events: none;
     font-family: "DFVN36Daysoftype";
-    font-size: 350px;
+    font-size: 320px;
     font-style: normal;
     font-weight: 400;
     letter-spacing: -8px;
@@ -1012,7 +1054,7 @@ transition: animation .2s ease;
     -webkit-text-fill-color: transparent;
     opacity: 0%;
     transition: opacity .2s ease; 
-    z-index: 30;
+    z-index: 9000;
   }
   .correct-popup-container{
     z-index: 999; 
@@ -1059,3 +1101,220 @@ transition: animation .2s ease;
   
   /*# sourceMappingURL=styles.css.map */
   
+  /* By Boat poem */
+.eyebrow{
+  font-size: 12pt;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99%; /* 25.688px */
+  letter-spacing: -0.96px;
+  text-transform: uppercase;
+}
+
+.by-boat-text{
+  width: 100vw;
+  height: 800vh;
+  position: relative;
+  z-index: 3;
+}
+  .poem-title-container{
+    position: absolute;
+  }
+.poem-title-container:nth-of-type(1){
+  
+  top: 120px;
+  left: 150px;
+}
+
+.poem-title-container:nth-of-type(2){
+  
+  top: 180px;
+  right: 160px;
+}
+
+.poem-title{
+  font-size: 12pt;
+font-style: normal;
+font-weight: 700;
+line-height: 99%; /* 25.688px */
+letter-spacing: -0.96px;
+text-transform: uppercase;
+}
+
+.poem-title:nth-of-type(2){
+  padding-left: 20px;
+}
+
+.fixed-video-bg{
+  z-index: 0;
+  width: 100vw;
+  position: fixed;
+}
+.boat-gradient{
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 600vh;
+  background: linear-gradient(180deg, #7FC4CE 0%, #737373 34.5%, #F80F00 55%, #F80F00 75%, rgba(30, 30, 30, 0.00) 100%);
+}
+
+.poem-line-container{
+  position: absolute;
+  top: 65vh;
+  display: flex;
+  flex-direction: column;
+  gap: 120vh;
+  color: #062A21;
+  text-align: right;
+font-family: "Garvis Pro";
+font-size: 18pt;
+font-style: normal;
+font-weight: 400;
+line-height: 100%;
+letter-spacing: -1.5px;
+}
+.poem-line-wrapper{
+  width: 100vw;
+  
+}
+
+.poem-line{
+  position: relative;
+}
+
+
+.poem-line-wrapper:nth-of-type(1){
+  right: 5vw;
+  
+}
+
+.poem-line-wrapper:nth-of-type(2){
+  right: 15vw;
+  
+}
+
+.poem-line-wrapper:nth-of-type(3){
+  right: 15vw;
+  
+}
+
+.poem-line:nth-of-type(2){
+  right: 150px;
+}
+
+.poem-footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #FF540F;
+  text-align: right;
+  width: 100vw;
+  padding: 50px;
+}
+
+.poem-footer .eyebrow{
+  margin-right: 20px;
+  margin-bottom: -45px;
+}
+
+.poem-line-last{
+  position: sticky;
+  top: 20px;
+  transform: translateX(-30vw);
+  color: #FF540F;
+  mix-blend-mode: exclusion;
+}
+
+.pll2{
+  margin-top: 105px;
+  transform: translateX(-15vw);
+}
+h1{
+  font-size: 150pt;
+  
+  
+  
+}
+
+.text-container{
+  position: absolute;
+  z-index: 3;
+  gap: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.t-c-container{
+  color: #FF540F;
+  gap: 50vh;
+}
+
+h2{
+  font-size: 120pt;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 107%; /* 137px */
+  letter-spacing: -5px;
+}
+
+
+h3{
+  
+  font-size: 80pt;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 107%; /* 137px */
+  letter-spacing: -5px;
+}
+
+h4{
+  font-size: 20pt;
+  font-style: normal;
+font-weight: 600;
+line-height: 107%; /* 42.813px */
+letter-spacing: 4.4px;
+}
+
+.header-container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  text-align: right;
+  padding-right: 2vw;
+}
+
+.t-c-container .header-container h1{
+  margin-top: -30vh;
+}
+
+.diacritics-sm{
+  text-transform: lowercase;
+  font-family: "proxima-nova", sans-serif; 
+}
+
+#with-eyebrow{
+  position: absolute;
+  right: calc(2vw + 435px);
+  top: 52vh;
+}
+
+.body-text-container{
+  
+}
+
+.t-c-gradient{
+  position: absolute;
+  width: 100vw;
+  height: 200vh;
+  background: linear-gradient(176deg, rgba(24, 11, 6, 0.00) 13.64%, #180B06 25.47%);
+}
+
+#outsiderestaurant-content{
+  position: relative;
+  z-index: 5;
+  width: 60vw;
+  padding: 500px 0 0 2vw;
+}

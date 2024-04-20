@@ -13,13 +13,13 @@ export default function Index() {
   const image = useRef();
 
   useGSAP( () => {
-    const targets = gsap.utils.toArray(["p", image.current])
+    const targets = gsap.utils.toArray(["p", ".vertical-sign"])
     gsap.fromTo(targets, {scale: 0.85, opacity: 0}, {scale: 1, opacity: 1, stagger: 0.5})
     timeline.add(gsap.to(container.current, { opacity: 0 }))
   }, {scope: container})
 
   return (
-    <div ref={container} className='h-screen w-screen overflow-clip living-room'>
+    <div ref={container} className='fixed h-screen w-screen overflow-clip living-room'>
       <div className="h-[100vh] w-full flex flex-col justify-center items-center gap-5">
       <Link scroll={false} href="/projects">
           <div className="vertical-sign" id="vs-kitchen">
@@ -30,7 +30,7 @@ export default function Index() {
             </div>
           </div>
         </Link>
-        <Link scroll={false} href="/projects">
+        <Link scroll={false} href="/transportation">
           <div className="vertical-sign" id="vs-journey">
         
             <div className="v-s-inner-container">
@@ -39,17 +39,7 @@ export default function Index() {
             </div>
           </div>
         </Link>
-        <p className="text-[5vw]">About</p>
-        <p className="max-w-[50%] text-center">Sed ut rhoncus nibh. Cras eleifend tellus a enim sodales, a efficitur odio euismod. Aenean non consequat lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce quis eleifend ipsum, sit amet posuere ligula.</p>
-        <div ref={image} className='relative w-[50%] h-[40vh]'>
-          <Image 
-            src={Picture}
-            placeholder='blur'
-            fill
-            alt="Description of the image"
-            style={{objectFit: "cover"}}
-          />
-        </div>
+        
       </div>
       <div className="prefetch">
     <img src="images/Bango.jpeg" alt=""></img>

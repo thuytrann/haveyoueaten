@@ -16,7 +16,7 @@ export default function Home(/*{ params: { lng } }*/) {
   }, {scope: container})
 
   return (
-    <div ref={container} className='h-screen w-screen overflow-clip alleyway'>
+    <div ref={container} className='fixed h-screen w-screen overflow-clip alleyway'>
       <div className="h-[100vh] flex flex-col justify-center items-center gap-5">
         
         <Link scroll={false} href="/about">

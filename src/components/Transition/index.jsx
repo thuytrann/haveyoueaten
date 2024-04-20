@@ -26,7 +26,8 @@ export default function TransitionLayout({ children }) {
     }, [children]) 
 
     return (
-        <div className="fixed background">
+        <div className="background">
+            
             {displayChildren}
         </div>
     )

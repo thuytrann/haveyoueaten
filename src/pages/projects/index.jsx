@@ -7,7 +7,55 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Draggable from "gsap/dist/Draggable";
 
+
 export default function Index() {
+  function TopNavigation() {
+    useEffect(() => {
+      const els = document.querySelectorAll('.styled-button');
+  
+      els.forEach(button => {
+        button.addEventListener('click', function() {
+          els.forEach(btn => {
+            btn.classList.remove('bg-btn-active');
+          });
+  
+          this.classList.add('bg-btn-active');
+          changeBackground(this.id);
+        });
+      });
+    }, []);
+  
+    function changeBackground(id) {
+      const cls = [
+        'bg-img-wooden',
+        'bg-img-inox',
+        'bg-img-pinkgreen'
+      ];
+  
+      const kitchenElement = document.getElementById('kitchen');
+  
+      cls.forEach(className => {
+        kitchenElement.classList.remove(className);
+      });
+  
+      switch (id) {
+        case 'wooden':
+          kitchenElement.classList.add('bg-img-wooden');
+          break;
+        case 'inox':
+          kitchenElement.classList.add('bg-img-inox');
+          break;
+        case 'pinkgreen':
+          kitchenElement.classList.add('bg-img-pinkgreen');
+          break;
+        default:
+          console.log('switch caught nothing');
+          break;
+      }
+    }
+  
+    return null;
+  }
 
   const { timeline } = useContext(TransitionContext);
   const container = useRef(null);
@@ -83,7 +131,7 @@ export default function Index() {
   const ancom = tocom.current ? tocom.current.children : [];
 
   const getFood = (foodCutout, counter, setCounter) => {
-    const customCursor = document.getElementById('cursor');
+    //const customCursor = document.getElementById('cursor');
 
     if (counter < 3) {
 
@@ -102,9 +150,15 @@ export default function Index() {
           }}
         />
       );
-      
+      const customCursor = document.getElementById('cursor');
+
       // Assuming ricebowl is a state variable
       customCursor.style.backgroundImage = "url('images/dua.png')";
+
+      setTimeout(() => {
+        customCursor.style.backgroundImage = "url('images/dua2.png')";
+        customCursor.style.cursor = "none";
+      },200)
 
       setRiceBowl(prevState => [...prevState, newChild]);
       setCounter(prevCount => prevCount + 1);
@@ -113,7 +167,7 @@ export default function Index() {
       setCounter(0);
     }
     return () => {
-      customCursor.style.backgroundImage = "url('images/dua2.png')";
+      //customCursor.style.backgroundImage = "url('images/dua2.png')";
     };
   };
 
@@ -130,7 +184,15 @@ export default function Index() {
             setCanhchuaCounter(prevCounter => prevCounter - 1);
           }
           ancom[ancom.length - 1].remove();
- 
+          const customCursor = document.getElementById('cursor');
+
+          // Assuming ricebowl is a state variable
+          customCursor.style.backgroundImage = "url('images/dua.png')";
+    
+          setTimeout(() => {
+            customCursor.style.backgroundImage = "url('images/dua2.png')";
+            customCursor.style.cursor = "none";
+          },200)
         }
         if (ancom.length === 1) {
           console.log("boi com");
@@ -147,6 +209,7 @@ export default function Index() {
             }
           }, 3000);
         }
+        
       
   
 
@@ -177,6 +240,8 @@ export default function Index() {
     const quizQuestions = document.querySelectorAll(".quiz-content");
     const wrongPopup = document.getElementById('wrong-popup');
     const correctPopup = document.querySelectorAll(".correct-popup");
+    const totalQuestions = quizQuestions.length;
+    let countQ = 0;
 
     if (currentQuestion === 0) {
       correctAnswer = quizOptions[1];
@@ -184,37 +249,40 @@ export default function Index() {
       correctAnswer = quizOptions[5];
     } else if (currentQuestion === 2) {
       correctAnswer = quizOptions[10];
-    }
+    }  else if (currentQuestion === 3) {
+        correctAnswer = quizOptions[15];
+      }
 
+    if (countQ < totalQuestions){
     if (selectedAnswer === correctAnswer) {
       selectedAnswer.classList.add('btn-correct');
       correctPopup[score].style.visibility = 'visible';
       setScore(score + 1);
+      countQ ++;
     } else {
       selectedAnswer.classList.add('btn-wrong');
       wrongPopup.style.opacity = '100%';
       if (score - 1 >= 0) {
         correctPopup[score - 1].style.visibility = 'hidden';
       }
+      countQ ++;
     }
-
+    }else{
+      
+    }
     setTimeout(() => {
       if (currentQuestion < quizQuestions.length-1) {
         quizQuestions[currentQuestion].classList.remove('question-active');
         wrongPopup.style.opacity = '0%';
         setCurrentQuestion(currentQuestion + 1);
         quizQuestions[currentQuestion + 1].classList.add('question-active');
-      }/* else {
-        showResult();
-      }*/
+      } else {
+        
+      }
     }, 3000);
   }
-  /*
-  const showResult = () => {
-    const resultContainer = document.getElementById('result');
-    resultContainer.innerHTML = "<h2>Quiz Result</h2><p>You scored " + score + " out of " + totalQuestions + " questions.</p>";
-  }*/
   
+
   useEffect(() => {
     gsap.registerPlugin(Draggable);
 
@@ -251,7 +319,7 @@ export default function Index() {
   
 
   return (
-    <div ref={container} className='h-screen w-screen overflow-clip kitchen'>
+    <div ref={container} className='fixed h-screen w-screen overflow-clip kitchen'>
      
      <div style={{ 
       width: cursorImage ? '20px' : '400px',
@@ -295,9 +363,7 @@ export default function Index() {
             data-text="W">W</span>hat is the first thing you need to do?</div>
       </div>
       <div className="quiz-answer-option">
-        <div className="question-1">
-
-        </div>
+        
         <button onClick={checkAnswer} className="btn-option">
           <div className="btn-outline"></div>Fluff up the rice
         </button>
@@ -322,9 +388,7 @@ export default function Index() {
             data-text="W">H</span>ow do you show respect for elders at the dinner table?</div>
       </div>
       <div className="quiz-answer-option">
-        <div className="question-1">
-
-        </div>
+        
         <button onClick={checkAnswer} className="btn-option">
           <div className="btn-outline"></div>Only eat rice
         </button>
@@ -350,9 +414,7 @@ export default function Index() {
             data-text="W">W</span>hat are you not allowed to do while eating fish?</div>
       </div>
       <div className="quiz-answer-option">
-        <div className="question-1">
-
-        </div>
+        
         <button onClick={checkAnswer} className="btn-option">
           <div className="btn-outline"></div>Dip it in fish sauce
         </button>
@@ -368,7 +430,49 @@ export default function Index() {
 
       </div>
     </div>
+    <div className="quiz-content question-4">
+      <div className="quiz-question-container">
+        <div className="quiz-question quiz-question-shadow" data-text="hat is the first thing you need to do?"><span
+            className="script" data-text="W">W</span>hat would happen if you don't finish your food?</div>
+        <div className="quiz-question" data-text="hat is the first thing you need to do?"><span className="script"
+            data-text="W">W</span>hat would happen if you don't finish your food?</div>
+      </div>
+      <div className="quiz-answer-option">
+        
+        <button onClick={checkAnswer} className="btn-option">
+          <div className="btn-outline"></div>Flush it down the toilet
+        </button>
+        <button onClick={checkAnswer} className="btn-option">
+          <div className="btn-outline"></div>Eat the rest later
+        </button>
+        <button onClick={checkAnswer} className="btn-option">
+          <div className="btn-outline"></div>Your dog would eat it
+        </button>
+        <button onClick={checkAnswer} className="btn-option">
+          <div className="btn-outline"></div>Your mom would yell at you
+        </button>
 
+      </div>
+    </div>
+    <div className="quiz-content question-5">
+      <div className="quiz-question-container">
+        <div className="quiz-question quiz-question-shadow" data-text="hat is the first thing you need to do?"><span
+            className="script" data-text="W">Y</span>ou scored ___ </div>
+        <div className="quiz-question" data-text="hat is the first thing you need to do?"><span className="script"
+            data-text="W">Y</span>ou scored ___ </div>
+      </div>
+      <div className="quiz-answer-option">
+        
+        <button className="btn-option">
+          <div className="btn-outline"></div>Get your receipt
+        </button>
+        <button onClick={checkAnswer} className="btn-option">
+          <div className="btn-outline"></div>Give compliments to the chef
+        </button>
+       
+
+      </div>
+    </div>
     <div onClick={closeQuiz} id="close-quiz">
       <svg id="arrow" width="170" height="15" viewBox="0 0 170 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1 1L92 14L183 1" stroke-width="2" stroke="#AAB14F"/>
