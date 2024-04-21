@@ -75,7 +75,7 @@ export default function Index() {
   return (
     <div ref={container} className='fixed h-screen w-screen overflow-clip living-room'>
       <div className="h-[100vh] w-full flex flex-col justify-center items-center gap-5">
-      <Link scroll={false} href="/projects">
+      <Link scroll={false} href="/kitchen">
           <div className="vertical-sign" id="vs-kitchen">
         
             <div className="v-s-inner-container">

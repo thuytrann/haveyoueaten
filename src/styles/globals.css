@@ -1096,7 +1096,7 @@ border: 1px solid #FF540F;
     width: 100%; }
   
   .quiz-question {
-    font-size: 32px;
+    font-size: 2.5vw;
     position: absolute;
     letter-spacing: -1.2px;
     font-weight: 600;
@@ -1113,7 +1113,7 @@ border: 1px solid #FF540F;
     display: block; }
   
   .quiz-question span {
-    font-size: 40px;
+    font-size: 2.9vw;
     -webkit-text-stroke-width: 0.1px;
     -webkit-text-stroke-color: black; }
   
@@ -1144,22 +1144,22 @@ border: 1px solid #FF540F;
   .quiz-answer-option {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 2vw;
     position: absolute;
     bottom: 3vh;
     left: 50%;
     transform: translate(-50%, 0); }
   
   .btn-option {
-    width: 190px;
-    height: 50px;
+    width: 13vw;
+    height: 3.5vw;
     border-radius: 50%;
     /* This will make the button shape as an ellipse */
     background: var(--pink-white);
     /* Button background color */
     color: #000;
     text-align: center;
-    font-size: 17px;
+    font-size: 1.2vw;
     /* Button text size */
     border: none;
     /* Remove button border */
