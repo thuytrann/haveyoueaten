@@ -100,7 +100,10 @@ function errorDiffusion1CH(u8array, width, height) {
   const [reader, setReader] = useState(null);
 
   useEffect(() => {
-    async function print() {
+    const button = document.querySelector('button');
+  button.addEventListener('click', async function print() {
+    const newPort = await navigator.serial.requestPort();
+    await newPort.open({ baudRate: 115200 });
       const cvs = document.querySelector('canvas');
       try {
         if (port == null) {
@@ -161,7 +164,7 @@ function errorDiffusion1CH(u8array, width, height) {
           await port.close();
         }
       }
-    }
+    })
 
     print();
 
@@ -228,7 +231,7 @@ function errorDiffusion1CH(u8array, width, height) {
     <div>
       <h1>Print Web Serial API for Phomemo M02S</h1>
       <input type="file" accept="image/*" id="img_file" onChange={loadImage} />
-      <button onClick={async () => {await this.print();}}>印刷</button>
+      <button>印刷</button>
       <p>
         <canvas></canvas>
       </p>

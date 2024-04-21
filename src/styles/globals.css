@@ -205,7 +205,7 @@ border: 1px solid #FF540F;
   .alleyway {
       background: url("/images/Alleyway.jpg");
       background-position: bottom;
-      background-size: 100%;
+      background-size: 100vw auto;
       background-repeat: no-repeat;
   }
   
@@ -415,6 +415,43 @@ border: 1px solid #FF540F;
     filter: drop-shadow(0px 0px 10.6px rgba(255, 255, 255, 0.75)); }
   
   /* ALLEYWAY */
+.about-container{
+  width: 70vw;
+  height: 70vh;
+  background-color: #0035AA;
+  color: white;
+  position: absolute;
+  z-index: 30;
+  border-radius: 20px;
+  transform: translate(0, 100vh);
+  transition: transform .5s ease;
+}
+
+.active{
+  transform: translate(0, 0);
+}
+
+.about-container .a-s-i-about{
+  font-size: 13vw;
+  
+  margin-top: -5vh;
+}
+.about-container .a-s-i-this-project{
+  font-size: 4vw;
+  
+  margin-top: -5vh;
+}
+.about-info-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: auto;
+  gap: 5vw;
+  width: 80%;
+}
+
+
 .about-sign{
   position: absolute;
   top: 20vh;
@@ -473,8 +510,8 @@ border: 1px solid #FF540F;
 .a-s-i-outline{
  
   position: absolute;
-    width: 92%;
-    height: 85%;
+    width: 95%;
+    height: 90%;
     border-radius: 10px;
     top: 50%;
     left: 50%;
@@ -506,7 +543,7 @@ border: 1px solid #FF540F;
     left: 20vw;
     perspective: 500px; }
   
-  #living-room .vertical-sign {
+  .living-room .vertical-sign {
     perspective: 600px; }
   
   .v-s-inner-container {
@@ -516,17 +553,7 @@ border: 1px solid #FF540F;
     box-shadow: none;
     transition: all 0.3s; }
   
-  .vertical-sign-content {
-    color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    width: 90px;
-    word-wrap: break-word;
-    font-size: 12.5vh;
-    line-height: 9.5vh;
-    text-align: center;
-    padding: 30px 10px 20px;
-    white-space: pre-wrap; }
+  
   
   .v-s-alley {
     background: linear-gradient(90deg, #43C2A3 0%, #FF540F 50%, #43C2A3 100%); }
@@ -556,16 +583,9 @@ border: 1px solid #FF540F;
   
 
 
-  #nuoc-mia{
-    position: fixed;
-    width: 15vw;
-    top: 40vh;
-    right: 25vw;
-
-  }
-  
+ 
   .hover-item {
-    width: 100%;
+
     fill: transparent;
     transition: filter 0.3s ease-in-out; }
   
@@ -640,33 +660,36 @@ border: 1px solid #FF540F;
   
   #moped {
     position: fixed;
-    top: 32.5vh;
+    bottom: 12.6vw;
     left: 37vw;
-    width: 11vw; }
+    }
     #nauvau {
       position: fixed;
-      top: 60.8vh;
-      left: 26.8vw;
-      width:11vw; 
+      bottom: 11vw;
+      left: 28.8vw;
+
 }
 
 #nuocmia {
   position: fixed;
-  top: 17vh;
-  left: 49vw;
-  width: 18.5vw;
+  bottom: 9vw;
+  left: 48.8vw;
+  
 }
 #bluestool {
   position: fixed;
-  bottom: 1vh;
+  bottom: 2.5vw;
   left: 43.6vw;
-  width: 10.3vw;
+
+
 }
-  .hover-item {
-    width: 100%;
-    fill: transparent;
-    transition: filter 0.3s ease-in-out; }
-  
+
+.bluestool{
+  width: 11%;
+  position: fixed;
+  z-index: 0;
+}
+ 
 
   
   .hover-item:hover {

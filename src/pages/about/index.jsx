@@ -25,7 +25,7 @@ export default function Index() {
           <div className="vertical-sign" id="vs-kitchen">
         
             <div className="v-s-inner-container">
-              <p className="vertical-sign-content">Kitchen</p>
+              <p className="vertical-sign-content">Ki<br></br>tchen</p>
 
             </div>
           </div>
