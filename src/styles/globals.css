@@ -540,11 +540,11 @@ border: 1px solid #FF540F;
   
   .alleyway .vertical-sign {
     bottom: 20vw;
-    left: 20vw;
-    perspective: 500px; }
+    left: 20.5vw;
+    perspective: 30vw; }
   
   .living-room .vertical-sign {
-    perspective: 600px; }
+    perspective: 45vw; }
   
   .v-s-inner-container {
     display: flex;
@@ -667,6 +667,36 @@ border: 1px solid #FF540F;
 
 }
 
+#danisa{
+  position: fixed;
+      bottom: 14.2vw;
+      left: 22.5vw;
+}
+
+#luggages{
+  position: fixed;
+      bottom:1.5vw;
+      left: 54.3vw;
+}
+
+#tv{
+  position: fixed;
+      bottom:26.5vw;
+      left: 71vw;
+}
+
+#fan{
+  position: fixed;
+      bottom:22.2vw;
+      left: 56.5vw;
+}
+
+#outside{
+  position: fixed;
+      bottom:28.4vw;
+      left: 44.2vw;
+}
+
 #nuocmia {
   position: fixed;
   bottom: 9vw;
@@ -687,7 +717,38 @@ border: 1px solid #FF540F;
   z-index: 0;
 }
  
+.danisa-container{
+  width: 40vw;
+ 
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 100vh);
+  transition: transform .3s ease;
+  
+}
 
+
+
+.danisa-container img{
+  position: absolute;
+}
+
+#danisa-close{
+  transition: transform .2s ease;
+}
+
+.danisa-opening{
+  transform: translate(-50%, -50vh);
+}
+
+.danisa-closing{
+  transform: translateY(-110%);
+}
+
+#danisa-close:hover{
+  transform: scale(1.1);
+}
   
   .hover-item:hover {
     filter: blur(2px); }
@@ -700,20 +761,9 @@ border: 1px solid #FF540F;
   
   /* LIVING ROOM */
   /*# sourceMappingURL=styles.css.map */
-  #outside {
-    bottom: 28.1vw;
-    left: 44.2vw;
-    width: 4.5vw; }
+
   
-  #fan {
-    bottom: 21.7vw;
-    left: 56.5vw;
-    width: 5.2vw; }
-  
-  #tv {
-    bottom: 26.2vw;
-    left: 70.9vw;
-    width: 6.9vw; }
+
   
   /* TRANSPORTATION */
   .transportation-question {

@@ -52,7 +52,7 @@ export default function Index({ location }) {
       width: location === '/projects' ? '400px' : '20px',
       height: location === '/projects' ? '600px' : '20px',
    
-    transform: location === '/projects' ? 'translate(-350px, -20px)' : 'translate(0,0)',
+    transform: location === '/projects' ? 'translate(-350px, -20px)' : 'translate(-10px,-10px)',
     
     backgroundSize: '100%',
     backgroundRepeat: 'no-repeat',

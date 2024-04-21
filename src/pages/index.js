@@ -77,7 +77,7 @@ export default function Home(/*{ params: { lng } }*/) {
     newBluestool.style.top = yPosition + 'px';
 
     // Add the new bluestool to the body
-    document.body.appendChild(newBluestool);
+    container.current.appendChild(newBluestool);
     console.log('newBluestool', newBluestool);
 }
   
@@ -132,7 +132,7 @@ export default function Home(/*{ params: { lng } }*/) {
 
       <div className="h-[100vh] flex flex-col justify-center items-center gap-5">
         
-        <Link scroll={false} href="/about">
+        <Link scroll={false} href="/livingroom">
           <div className="vertical-sign">
         
             <div className="v-s-inner-container">
