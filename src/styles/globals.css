@@ -204,7 +204,7 @@ border: 1px solid #FF540F;
   
   .alleyway {
       background: url("/images/Alleyway.jpg");
-      background-position: center;
+      background-position: bottom;
       background-size: 100%;
       background-repeat: no-repeat;
   }
@@ -242,7 +242,7 @@ border: 1px solid #FF540F;
   /* Loading Animation */
   /*Cursor*/
   #cursor {
-    
+    position: absolute;
     cursor: none;
     pointer-events: none;
     z-index: 9999; }
@@ -415,14 +415,95 @@ border: 1px solid #FF540F;
     filter: drop-shadow(0px 0px 10.6px rgba(255, 255, 255, 0.75)); }
   
   /* ALLEYWAY */
+.about-sign{
+  position: absolute;
+  top: 20vh;
+  height: 0;
+  right: -1vw;
+}
+
+.about-sign:hover{
+  transform: translate(-3vw, 0);
+  transition: all .2s ease;
+}
+
+
+.about-sign-item{
+  
+  background-color: #0035AA;
+  color: white;
+  border-radius: 10px;
+  padding: 1vh 1vw;
+  position: relative;
+  z-index: 3;
+}
+
+.about-sign-item:nth-of-type(2){
+  transform: translate(2vw, -3vh);
+  z-index: 2;
+}
+
+.about-sign-item:nth-of-type(3){
+  transform: translate(3vw, -26vh);
+  z-index: 0;
+}
+
+.a-s-i-about{
+  font-family: "Garvis Pro";
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: 1pt;
+  font-size: 2.8vw;
+  transform: scale(1, .3);
+  text-align: center;
+  width: 100%;
+  margin: -2vh 0;
+}
+
+.a-s-i-number{
+  font-family: "Garvis Pro";
+  display: inline-block;
+  letter-spacing: 1pt;
+  font-size: 1.5vw;
+  transform: scale(1, 1.5);
+  vertical-align: middle;
+  padding-bottom: 1vh;
+}
+
+.a-s-i-outline{
+ 
+  position: absolute;
+    width: 92%;
+    height: 85%;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  border: 1px solid white;
+}
+
+.a-s-i-this-project{
+  line-height: 90%;
+  text-transform: uppercase;
+  font-size: .8vw;
+  text-align: center;
+}
+
+.a-s-i-bottom{
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  align-items: center;
+}
+
   .vertical-sign {
     font-family: "DFVN36Daysoftype";
     position: absolute;
     perspective-origin: center; }
   
   .alleyway .vertical-sign {
-    top: 25vh;
-    left: 22vw;
+    top: 8vh;
+    left: 20vw;
     perspective: 500px; }
   
   #living-room .vertical-sign {
@@ -473,11 +554,15 @@ border: 1px solid #FF540F;
   .v-s-inner-container:hover {
     transform: rotateY(0); }
   
-  #moped {
+
+
+  #nuoc-mia{
     position: fixed;
-    top: 47vh;
-    left: 37vw;
-    width: 11vw; }
+    width: 15vw;
+    top: 40vh;
+    right: 25vw;
+
+  }
   
   .hover-item {
     width: 100%;
@@ -503,10 +588,7 @@ border: 1px solid #FF540F;
     position: absolute;
     perspective-origin: center; }
   
-  #alleyway .vertical-sign {
-    top: 25vh;
-    left: 21vw;
-    perspective: 500px; }
+ 
   
   #living-room .vertical-sign {
     perspective: 600px; }
@@ -524,7 +606,7 @@ border: 1px solid #FF540F;
     -webkit-text-stroke-color: black;
     width: 90px;
     word-wrap: break-word;
-    font-size: 12.5vh;
+    font-size: 12vh;
     line-height: 9.5vh;
     text-align: center;
     padding: 30px 10px 20px;
@@ -558,17 +640,34 @@ border: 1px solid #FF540F;
   
   #moped {
     position: fixed;
-    top: 47vh;
+    top: 32.5vh;
     left: 37vw;
     width: 11vw; }
-  
+    #nauvau {
+      position: fixed;
+      top: 60.8vh;
+      left: 26.8vw;
+      width:11vw; 
+}
+
+#nuocmia {
+  position: fixed;
+  top: 17vh;
+  left: 49vw;
+  width: 18.5vw;
+}
+#bluestool {
+  position: fixed;
+  bottom: 1vh;
+  left: 43.6vw;
+  width: 10.3vw;
+}
   .hover-item {
     width: 100%;
     fill: transparent;
     transition: filter 0.3s ease-in-out; }
   
-  .hover-item-container {
-    position: fixed; }
+
   
   .hover-item:hover {
     filter: blur(2px); }

@@ -36,7 +36,7 @@ export default function Loading() {
       
       setTimeout(() => {
         
-        console.log('between pages 1', animation, animation.current);
+        //console.log('between pages 1', animation, animation.current);
         
         }, 2000);
       // setLoading(false);
@@ -50,7 +50,7 @@ export default function Loading() {
 
     // Check if the page is reloading
     if (router.asPath !== router.route) {
-      console.log('between pages 2');
+      //console.log('between pages 2');
 
       setLoading(true);
       
@@ -74,7 +74,7 @@ export default function Loading() {
     const timeout = setTimeout(() => {
       
       setLoading(false);
-      console.log('initial');
+      //console.log('initial');
       
      
   
@@ -96,11 +96,11 @@ export default function Loading() {
         setProgress(counter);
         
         if (counter === 100) {
-            console.log(animation.current)
+            //console.log(animation.current)
             clearInterval(interval);
             const loadInfo = document.querySelectorAll('.loading-ps');
             const loadItem = document.querySelectorAll('.load-item');
-            console.log(loadItem);
+            //console.log(loadItem);
             if (loadInfo) {
               loadInfo.forEach(element => {
                 element.style.animation ='none';
