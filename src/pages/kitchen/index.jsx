@@ -9,10 +9,30 @@ import Draggable from "gsap/dist/Draggable";
 
 
 export default function Index() {
-  function TopNavigation() {
+ 
+  const [backgroundImage, setBackgroundImage] = useState('url("/images/Bango.jpeg")');
+
+  // Function to change the background image based on button click
+  const changeBackground = (image) => {
+    setBackgroundImage(image);
+    const els = document.querySelectorAll('.styled-button');
+     
+      els.forEach(button => {
+        button.addEventListener('click', function() {
+          els.forEach(btn => {
+            btn.classList.remove('bg-btn-active');
+          });
+  
+          this.classList.add('bg-btn-active');
+          changeBackground(this.id);
+        });
+      });
+  };
+
+  /*function TopNavigation() {
     useEffect(() => {
       const els = document.querySelectorAll('.styled-button');
-  
+      console.log(els);
       els.forEach(button => {
         button.addEventListener('click', function() {
           els.forEach(btn => {
@@ -32,7 +52,7 @@ export default function Index() {
         'bg-img-pinkgreen'
       ];
   
-      const kitchenElement = document.getElementById('kitchen');
+      const kitchenElement = document.querySelector('.kitchen');
   
       cls.forEach(className => {
         kitchenElement.classList.remove(className);
@@ -55,7 +75,7 @@ export default function Index() {
     }
   
     return null;
-  }
+  }*/
 
   const { timeline } = useContext(TransitionContext);
   const container = useRef(null);
@@ -319,16 +339,16 @@ export default function Index() {
   
 
   return (
-    <div ref={container} className='fixed h-screen w-screen overflow-clip kitchen'>
-     
+    <div ref={container} className='fixed h-screen w-screen overflow-clip kitchen' style={{backgroundRepeat:'no-repeat', backgroundSize: '100%', background: backgroundImage }}>
+    
       <div className="col-frame">
     <div className="ver-col"></div>
     <div className="ver-col-2"></div>
   </div>
   <div className='bg-btn-container'>
-  <div className="styled-button bg-img-wooden bg-btn-active" id="wooden"> </div>
-      <div className="styled-button bg-img-inox" id="inox"> </div>
-      <div className="styled-button bg-img-pinkgreen" id="pinkgreen"></div>
+  <button onClick={() => changeBackground("url('/images/Bango.jpeg')")} className="styled-button bg-img-wooden bg-btn-active" id="wooden"> </button>
+      <button onClick={() => changeBackground("url('/images/Baninox.jpeg')")} className="styled-button bg-img-inox" id="inox"> </button>
+      <button onClick={() => changeBackground("var(--pink-green)")} className="styled-button bg-img-pinkgreen" id="pinkgreen"></button>
   </div>
   
   <div onMouseEnter={quizEnter}

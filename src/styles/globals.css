@@ -220,11 +220,9 @@ border: 1px solid #FF540F;
     height:800vh;
 }
   .kitchen {
-      background: url("/images/Bango.jpeg");
-      background-position: bottom;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      cursor: none;  
+    background-position: bottom;
+    background-size: 100% !important;
+    background-repeat: no-repeat;
     }
   a {
     text-decoration: none;
@@ -271,17 +269,134 @@ border: 1px solid #FF540F;
     width: 400px 
 }
   
-  .global-nav-content {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    transition: left 0.5s ease;
-    display: flex;
-    flex-direction: row;
-    gap: 10px; }
+.site-map{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 100vh;
+  border-radius: 50%;
+background: radial-gradient(50% 50% at 50% 50%, #E1EAD7 85.5%, rgba(225, 234, 215, 0.00) 100%);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.site-map-container{
+  width: 70vw;
+  height: 70vh;
+  position: relative;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#site-frame{
+  margin: auto;
   
+}
+
+.site-item{
+  padding: .5vw 1vw;
+border-radius: 50px;
+width: fit-content;
+position: fixed;
+font-size: 1vw;
+
+text-align: center;
+text-transform: uppercase;
+
+color: #FF540F;
+border: 1px solid #FF540F;
+transition: box-shadow .2s ease;
+}
+
+.site-item:hover{
+  box-shadow: 0 0 10px #FF540F;
+}
+
+#s-m-alleyway{
+  top: 50%;
+    left: 50%;
+    transform: translate(-50%, -650%);
+}
+
+#s-m-livingroom{
+  top: 50%;
+    left: 50%;
+    transform: translate(-260%, -400%);
+  
+}
+
+#s-m-kitchen{
+  top: 50%;
+    left: 50%;
+    transform: translate(-360%, 150%);
+  
+}
+
+#s-m-the-journey{
+  top: 50%;
+  left: 50%;
+  transform: translate(150%, -400%);
+  
+}
+
+#s-m-by-boat{
+  top: 50%;
+  left: 50%;
+  transform: translate(230%, -140%);
+  
+}
+
+#s-m-by-plane{
+  top: 50%;
+  left: 50%;
+  transform: translate(330%, -140%);
+  
+}
+
+#s-m-the-conversation{
+  top: 50%;
+  left: 50%;
+  transform: translate(100%, 150%);
+  
+}
+#s-m-the-departure{
+  top: 50%;
+  left: 50%;
+  transform: translate(80%, 400%);
+  
+}
+
+#s-m-the-arrival{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 550%);
+  
+}
+.logo-text{
+  
+  position: absolute;
+  top: 12vh;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  background: radial-gradient(50% 50% at 50% 50%, #FF540F 63.5%, #FFC163 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-align: center;
+font-size: 40px;
+line-height: 94%;
+}
+
+.site-map-open{
+  opacity: 1;
+}
+
   .slide {
     left: 20px; }
   
@@ -318,6 +433,7 @@ border: 1px solid #FF540F;
   position: fixed;
   top: 25px;
   right: 70px;
+  z-index: 40;
 }
   
   .styled-button {
