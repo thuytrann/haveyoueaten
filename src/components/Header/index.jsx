@@ -9,7 +9,26 @@ export default function Index({ location }) {
   
   const { toggleMute, muted } = useMute();
   //const [activeAudio, setActiveAudio] = useState(null);
-  const openNav = () => {
+  function openNav(event) {
+    if(event.currentTarget.classList.contains('site-link')){
+      console.log(event.currentTarget.children[0]);
+      const siteItems = document.querySelectorAll('.site-item');
+      siteItems.forEach((siteItem) => {
+        console.log("selected", siteItem == event.currentTarget.children[0]);
+        if(siteItem == event.currentTarget.children[0]){
+          siteItem.classList.add('site-item-selected');
+  
+        }
+        else{
+          siteItem.classList.remove('site-item-selected');
+  
+        }
+      })
+    }
+    
+   
+    
+    //event.currentTarget.children[0].style.color = '#E1EAD7';
     document.querySelector('.site-map').classList.toggle('site-map-open');
   
   }
@@ -86,16 +105,16 @@ export default function Index({ location }) {
 
           <div className="logo-text script outline-text">Have you <br></br>eaTen?</div>
           <div className="site-map-container">
-          <Link onClick={openNav} scroll={false} href="/">
+          <Link className="site-link" onClick={openNav} scroll={false} href="/">
           <div className="site-item" id="s-m-alleyway">Alleyway</div>
           </Link>
-          <Link onClick={openNav} scroll={false} href="/livingroom">
+          <Link className="site-link" onClick={openNav} scroll={false} href="/livingroom">
           <div className="site-item" id="s-m-livingroom">Livingroom</div>
           </Link>
-          <Link onClick={openNav} scroll={false} href="/kitchen">
+          <Link className="site-link" onClick={openNav} scroll={false} href="/kitchen">
           <div className="site-item" id="s-m-kitchen">Kitchen</div>
           </Link>
-          <Link onClick={openNav} scroll={false} href="/transportation">
+          <Link className="site-link" onClick={openNav} scroll={false} href="/transportation">
           <div className="site-item" id="s-m-the-journey">The Journey</div>
           </Link>
           <div className="site-item" id="s-m-by-boat">By Boat</div>

@@ -313,6 +313,11 @@ border: 1px solid #FF540F;
 transition: box-shadow .2s ease;
 }
 
+.site-item-selected{
+  background: #FF540F;
+  color: #E1EAD7;
+}
+
 .site-item:hover{
   box-shadow: 0 0 10px #FF540F;
 }
