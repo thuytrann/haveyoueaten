@@ -22,7 +22,10 @@ export default function Home(/*{ params: { lng } }*/) {
   useEffect(() => {
     document.addEventListener('click', function() {
       var audioPlay = document.getElementById('clickAudio');
-      audioPlay.play();
+      if(audioPlay){
+        audioPlay.play();
+
+      }
     });
     return () => {
       
@@ -157,7 +160,7 @@ export default function Home(/*{ params: { lng } }*/) {
               <div className="a-s-i-about">About</div>
               <div className="a-s-i-bottom">
               <div className="a-s-i-this-project">This <br></br> Project</div>
-              <div className="a-s-i-number">0918151854</div>
+              <div className="a-s-i-number">0903811555</div>
               </div>
               
             </div>

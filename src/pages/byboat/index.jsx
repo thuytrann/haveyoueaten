@@ -44,7 +44,7 @@ export default function Index() {
             <div className="poem-line">Boats rocking violently, robbed and wounded</div>
             <div className="poem-line">Closing eyes, waiting amidst wild waves and burning sun</div>
           </div>
-          <div className="poem-line-wrapper poem-line-last">
+          <div className="poem-line-wrapper poem-line-last pll1">
             <div className="poem-line">Seeking freedom in life's wandering</div>
             <div className="poem-line">Drifting to wherever, amidst the boundless waters</div>
           </div>

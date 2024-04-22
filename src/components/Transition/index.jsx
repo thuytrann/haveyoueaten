@@ -15,12 +15,14 @@ export default function TransitionLayout({ children }) {
             setDisplayChildren(children);
             timeline.pause().clear();
         })
+        console.log('exit'); 
     })
     
     useGSAP(() => {
         //if page is not the current page
         if (children.key !== displayChildren.key) {
-            exit();            
+            exit(); 
+                      
         }
 
     }, [children]) 

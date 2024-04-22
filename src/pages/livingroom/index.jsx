@@ -21,14 +21,18 @@ export default function Index() {
   };
   
   const danisaOpen = () => {
-    console.log('danisaOpen');
+    
     document.getElementById('danisa-close').classList.toggle('danisa-closing');
+
   };
   
   useEffect(() => {
     document.addEventListener('click', function() {
-      var audioPlay = document.getElementById('clickAudio');
-      audioPlay.play();
+      const audioPlay = document.getElementById('clickAudio');
+      if(audioPlay != null){
+        audioPlay.play();
+
+      }
     });
     return () => {
       

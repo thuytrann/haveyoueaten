@@ -11,6 +11,7 @@ export default function Index({ location }) {
   //const [activeAudio, setActiveAudio] = useState(null);
   function openNav(event) {
     if(event.currentTarget.classList.contains('site-link')){
+      //window.location.reload();
       console.log(event.currentTarget.children[0]);
       const siteItems = document.querySelectorAll('.site-item');
       siteItems.forEach((siteItem) => {
@@ -108,7 +109,7 @@ export default function Index({ location }) {
           <Link className="site-link" onClick={openNav} scroll={false} href="/">
           <div className="site-item" id="s-m-alleyway">Alleyway</div>
           </Link>
-          <Link className="site-link" onClick={openNav} scroll={false} href="/livingroom">
+          <Link className="site-link" onClick={openNav} scroll={false} href="/livingroom" exact>
           <div className="site-item" id="s-m-livingroom">Living room</div>
           </Link>
           <Link className="site-link" onClick={openNav} scroll={false} href="/kitchen">
@@ -117,11 +118,24 @@ export default function Index({ location }) {
           <Link className="site-link" onClick={openNav} scroll={false} href="/transportation">
           <div className="site-item" id="s-m-the-journey">The Journey</div>
           </Link>
+          <Link className="site-link" onClick={openNav} scroll={false} href="/byboat">
           <div className="site-item" id="s-m-by-boat">By Boat</div>
+          </Link>
+          <Link className="site-link" onClick={openNav} scroll={false} href="/byplane">
           <div className="site-item" id="s-m-by-plane">By Plane</div>
+          </Link>
+          <Link className="site-link" onClick={openNav} scroll={false} href="/the-conversation">
+
           <div className="site-item" id="s-m-the-conversation">The Conversation</div>
+          </Link>
+          <Link className="site-link" onClick={openNav} scroll={false} href="/the-departure">
+
           <div className="site-item" id="s-m-the-departure">The Departure</div>
+          </Link>
+          <Link className="site-link" onClick={openNav} scroll={false} href="/byplane">
+
           <div className="site-item" id="s-m-the-arrival">The Arrival</div>
+          </Link>
           
         <svg id="site-frame" width="45vw" height="auto" viewBox="0 0 621 429" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M89.5 288H467.5" stroke="#FF540F"/>

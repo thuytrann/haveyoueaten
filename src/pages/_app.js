@@ -3,24 +3,28 @@ import Header from '@/components/Header';
 import { TransitionProvider } from '@/context/TransitionContext'
 import Transition from '@/components/Transition';
 import Loading from '@/components/Loading';
-import { MuteProvider } from '@/context/MuteContext'
+import { MuteProvider } from '@/context/MuteContext';
+
 
 export default function App({ Component, pageProps, router}) {
   //const location = useLocation(); 
   console.log(router.pathname);
   
   return (
-    <MuteProvider>
+    
+<MuteProvider>
 <TransitionProvider>
       <Loading />
       
-      <Header location={router.pathname}/> 
+      <Header location={router.pathname} {...pageProps}/> 
       <Transition>
         
-        <Component key={router.route} {...pageProps} />
+        <Component key={router.route} {...pageProps} exact/>
       </Transition>
     </TransitionProvider>
     </MuteProvider>
+    
+    
     
   )
 }
