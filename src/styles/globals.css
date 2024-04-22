@@ -281,7 +281,8 @@ background: radial-gradient(50% 50% at 50% 50%, #E1EAD7 85.5%, rgba(225, 234, 21
   display: flex;
   flex-direction: column;
   opacity: 0;
-  transition: opacity .2s ease;
+  pointer-events: none;
+  transition: all .2s ease;
 }
 
 .site-map-container{
@@ -399,6 +400,7 @@ line-height: 94%;
 }
 
 .site-map-open{
+  pointer-events: all;
   opacity: 1;
 }
 

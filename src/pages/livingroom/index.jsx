@@ -112,7 +112,7 @@ export default function Index() {
       </Link>
       <Link scroll={false} href="/">
 
-      <div className="hover-item-container" id="outside">
+      <div onMouseEnter={() => playSound('/audio/background-sound.mp3')} onMouseLeave={stopSound} className="hover-item-container" id="outside">
       <svg className="hover-item" width="4.6vw" height="auto" viewBox="0 0 92 148" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M5.21228 9.6877L1.09094 9.73656L2.1987 103.173L15.2662 104.413L15.291 106.505L24.2205 106.399L24.3032 113.372L30.4852 113.298L37.3376 111.822L38.8519 123.66L47.2682 138.205L47.1277 126.351L52.6228 126.286L52.8129 142.324L59.0528 147.132L89.276 146.773L91.0902 10.0643L78.7096 8.81633L59.4188 4.16334L54.5775 1.4312L54.6271 5.61492L45.0106 5.72893L45.052 9.21537L23.088 10.8705L12.0564 7.5144L12.0399 6.11983L5.17095 6.20126L5.21228 9.6877Z" fill="none" strokeWidth="1" stroke="#FF0089"/>
 </svg>
@@ -120,13 +120,13 @@ export default function Index() {
 
       </div>
       </Link>
-      <div onMouseEnter={() => playSound('/audio/nau-vau.m4a')} onMouseLeave={stopSound} className="hover-item-container" id="tv">
+      <div onMouseEnter={() => playSound('/audio/haikich.mp3')} onMouseLeave={stopSound} className="hover-item-container" id="tv">
       <svg className="hover-item" width="7vw" height="auto" viewBox="0 0 138 187" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M17.5854 158.151L1 1H122.405C125.722 21.9976 132.489 69.1649 133.02 89.853C133.55 110.541 135.894 162.571 137 186L17.5854 158.151Z" stroke="#FF540F"/>
 </svg>
       </div>
      
-      <div onMouseEnter={() => playSound('/audio/tiengtrongxom.mp3')} onMouseLeave={stopSound} className="hover-item-container" id="fan">
+      <div onMouseEnter={() => playSound('/audio/fan-sound.mp3')} onMouseLeave={stopSound} className="hover-item-container" id="fan">
       <svg className="hover-item" width="5.2vw" height="auto" viewBox="0 0 101 171" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M24.7329 100.006C34.4973 108.088 47.3356 109.659 52.5342 109.435V139.743L41.6849 147.151C39.8767 147.151 34.226 148.229 26.089 152.539C17.9521 156.85 21.7945 162.866 24.7329 165.336C29.7055 167.581 45.6178 171.532 69.4863 169.377C99.3219 166.683 96.6096 156.58 95.9315 154.56C95.389 152.943 85.7603 148.947 81.0137 147.151C81.0137 147.151 71.7466 140.416 67.452 138.396V108.088C78.3014 101.353 100 81.2822 100 54.8806C100 21.8788 70.8425 1 44.3973 1C17.9521 1 1 29.2873 1 51.5131C1 73.7389 12.5274 89.9031 24.7329 100.006Z" stroke="#FF540F"/>
 </svg>

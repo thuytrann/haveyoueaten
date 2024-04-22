@@ -109,7 +109,7 @@ export default function Index({ location }) {
           <div className="site-item" id="s-m-alleyway">Alleyway</div>
           </Link>
           <Link className="site-link" onClick={openNav} scroll={false} href="/livingroom">
-          <div className="site-item" id="s-m-livingroom">Livingroom</div>
+          <div className="site-item" id="s-m-livingroom">Living room</div>
           </Link>
           <Link className="site-link" onClick={openNav} scroll={false} href="/kitchen">
           <div className="site-item" id="s-m-kitchen">Kitchen</div>
