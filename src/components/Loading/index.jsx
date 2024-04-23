@@ -181,9 +181,9 @@ export default function Loading() {
           </div>
           
         </div>
-        <div className='script outline-text loading-title'>HaVe you</div>
+        <div className='script outline-text-2 loading-title'>HaVe you</div>
 
-        <div className='script outline-text loading-title'>EaTeN?</div>
+        <div className='script outline-text-2 loading-title'>EaTeN?</div>
         
       </div>
     )

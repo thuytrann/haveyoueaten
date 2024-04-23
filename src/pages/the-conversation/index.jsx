@@ -46,22 +46,47 @@ export default function Index() {
   return (
     <div ref={container} id="the-conversation" className='w-screen'>
        <video className="fixed-video-bg" id="the-conversation-bg" src="/video/the-conversation-background.mp4" autoPlay muted loop></video>
-        <div className="text-container t-c-container  outline-text-2">
-            <div className="header-container" data-depth='0.10'>
+        <div className="text-container t-c-container">
+            <div className="header-container outline-text-2" data-depth='0.10'>
                 <h3>Conversation</h3>
                 <h1 className="script">C<span className="diacritics-sm">ô</span> Ho<span className="diacritics-sm">à</span>ng</h1>
-                <div className="eyebrow" id="with-eyebrow">With</div>
+                <div className="eyebrow outline-text" id="with-eyebrow">With</div>
                
             </div>
             
-            <div className="body-text-container" data-depth='0.20'>
-              <h4 data-depth='0.35' className="body-text-item">1:00PM</h4>
-              <h2 className="text-right pt-96 w-10/12 float-right">St. Louis, MO, USA</h2>
+            <div className="body-text-container " data-depth='0.20'>
+              <h4 data-depth='0.35' className="body-text-item outline-text">1:00PM</h4>
+              <h2 className="text-right pt-96 w-10/12 float-right outline-text-2">St. Louis, MO, USA</h2>
             </div>
             <div className="body-text-container" data-depth='0.55'>
             <div className="t-c-gradient"></div>
-            <video data-depth='0.15' className="body-text-item" id="outsiderestaurant-content" src="/video/outsiderestaurant-content.mp4" autoPlay muted loop></video>
-            <h3 data-depth='0.95' className="body-text-item script outline-text">Tr<span className="diacritics-sm">ú</span>c L<span className="diacritics-sm">â</span>m Restaurant</h3>
+            <video  className="body-text-item" id="outsiderestaurant-content" src="/video/outsiderestaurant-content.mp4" autoPlay muted loop></video>
+            <div className="gradient-body-text">
+            <h2 className="body-text-item script outline-text-2" id="restaurant-name">Tr<span className="outline-text diacritics-sm">ú</span>c L<span className="outline-text diacritics-sm">â</span>m <br></br>Restaurant</h2>
+            
+            <img id="restaurant-banner" src="/images/restaurantbanner.png"  alt="Trúc Lâm Restaurant Logo"/>
+            
+            </div>
+            <div id="google-map-container">
+              <h4>3737 Gravois Ave<br></br>St. Louis, MO, USA</h4>
+              <Link passHref target="_blank" scroll={false} href="https://g.co/kgs/ZDT8qfE">
+                
+              <div className="indicator indicator-blue uppercase">Google Map</div>
+
+              </Link>
+            </div>
+            </div>
+            <div className="body-text-container">
+              <Link scroll={false} href="/the-departure">
+              <div className="neon-sign-container">
+              
+                <img id="neon-off" src="/images/neon-off.png" alt=""/>
+                <img id="neon-on" src="/images/neon-on.png" alt=""/>
+              </div>
+              <div id="t-c-indi" className="indicator indicator-blue"><span className="uppercase">Click </span> neon sign to continue</div>
+              <div id="t-c-footer"></div>
+              </Link>
+              
             </div>
         </div>
       

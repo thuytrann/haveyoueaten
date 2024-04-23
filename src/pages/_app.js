@@ -8,7 +8,7 @@ import { MuteProvider } from '@/context/MuteContext';
 
 export default function App({ Component, pageProps, router}) {
   //const location = useLocation(); 
-  console.log(router.pathname);
+  console.log(Component, pageProps, router);
   
   return (
     
