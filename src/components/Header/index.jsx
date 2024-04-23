@@ -132,7 +132,7 @@ export default function Index({ location }) {
 
           <div className="site-item" id="s-m-the-departure">The Departure</div>
           </Link>
-          <Link className="site-link" onClick={openNav} scroll={false} href="/byplane">
+          <Link className="site-link" onClick={openNav} scroll={false} href="/the-arrival">
 
           <div className="site-item" id="s-m-the-arrival">The Arrival</div>
           </Link>

@@ -16,7 +16,7 @@ export default function Index() {
   const changeBackground = (image) => {
     setBackgroundImage(image);
     const els = document.querySelectorAll('.styled-button');
-     
+      console.log(els);
       els.forEach(button => {
         button.addEventListener('click', function() {
           els.forEach(btn => {
