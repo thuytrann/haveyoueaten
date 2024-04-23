@@ -90,7 +90,7 @@ export default function Index({ location }) {
       
         <div className="absolute flex gap-5 global-nav">
           
-          <img onClick={openNav} src='images/logo.svg' alt=""></img>
+          <img className="w-[5vw]" onClick={openNav} src='images/logo.svg' alt=""></img>
           
           
         </div>
