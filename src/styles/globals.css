@@ -516,13 +516,13 @@ p {
 }
 
 .bg-img-wooden {
-  background: url("/images/Bango.jpeg");
+  background: url("/images/bango.jpeg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
 .bg-img-inox {
-  background: url("/images/Baninox.jpeg");
+  background: url("/images/baninox.jpeg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
