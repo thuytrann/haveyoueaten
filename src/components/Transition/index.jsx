@@ -43,8 +43,8 @@ export default function TransitionLayout({ children }) {
     return (
         <div className="background">
             
-            <div ref={background} className="spinner-foreground z-100"></div>
-            <div ref={foreground} className="spinner-background z-100"></div>
+            {/*<div ref={background} className="spinner-foreground z-100"></div>
+            <div ref={foreground} className="spinner-background z-100"></div>*/}
             {displayChildren}
         </div>
     )

@@ -107,7 +107,7 @@ export default function Index({ location }) {
           <div className="logo-text script outline-text">Have you <br></br>eaTen?</div>
           <div className="site-map-container">
           <Link className="site-link" onClick={openNav} scroll={false} href="/">
-          <div className="site-item" id="s-m-alleyway">Alleyway</div>
+          <div className="site-item site-item-selected" id="s-m-alleyway">Alleyway</div>
           </Link>
           <Link className="site-link" onClick={openNav} scroll={false} href="/livingroom" exact>
           <div className="site-item" id="s-m-livingroom">Living room</div>

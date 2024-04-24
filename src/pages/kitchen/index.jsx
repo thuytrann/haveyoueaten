@@ -10,7 +10,7 @@ import Draggable from "gsap/dist/Draggable";
 
 export default function Index() {
  
-  const [backgroundImage, setBackgroundImage] = useState('url("/images/Bango.jpeg")');
+  const [backgroundImage, setBackgroundImage] = useState('url("/images/bango.jpeg")');
 
   // Function to change the background image based on button click
   const changeBackground = (image) => {
@@ -503,7 +503,7 @@ export default function Index() {
       <img src="images/red-rose-and-butterflies-sparkles.gif" alt=""></img>
     </div>
   </div>
-  <div id="wrong-popup" className="outline-text">Shame!</div>
+  <div id="wrong-popup" className="outline-text-2">Shame!</div>
   <div ref={dragContainer} id="food-container">
     <div className="inner-food-container">
       <div onClick={() => getFood(cakhoStages, cakhoCounter, setCakhoCounter)} className="drag-food-item" id="cakho">
