@@ -11,37 +11,10 @@ import Draggable from "gsap/dist/Draggable";
 
 export default function Index() {
   const container = useRef(null);
-  const windowSlide = useRef(null);
-  const byPlaneVN = useRef(null);
-  const byPlane = useRef(null);
-  const byPlaneUS = useRef(null);
-  const [progress, setProgress] = useState(0);
+
+
   
-  useEffect(() => {
-    gsap.registerPlugin(Draggable);
-
-     Draggable.create("#window-slide", {
-      type: "y",
-      bound: document.getElementById("window"),
-      inertia: true,
-      cursor: "none",
-      onClick: function () {
-        console.log("clicked");
-      },
-      onDrag: function () {
-        const style = window.getComputedStyle(windowSlide.current);
-    const transform = style.transform;
-
-    // The transform property is a string that looks like this: "translate3d(xpx, ypx, zpx)"
-    // We can use a regular expression to extract the y-coordinate
-    const match = /translate3d\(.+px, (.+)px, .+px\)/.exec(transform);
-    const y = match ? match[1] : 0; // If the regex matched, match[1] is the y-coordinate
-
-    console.log(y); // This will log the y-coordinate
-      },
-    })[0];
-    
-  })
+ 
 
   function clickPrint() {
     let src = document.querySelector("#src");
@@ -166,22 +139,27 @@ function toGrayscale(array, width, height) {
   
     return outputArray;
   }
-  
-  // 印刷処理
-  async function print(cvs) {
-    let port = null;
+  let port = null;
     let writer = null;
     let reader = null;
     console.log("here")
+  // 印刷処理
+  async function print(cvs) {
+    
   
   
   
     try {
+      console.log(port);
+    if (port == null) {
+      console.log(port)
+      
       port = await navigator.serial.requestPort();
+      console.log(port);
       await port.open({ baudRate: 115200 });
-  
+      console.log(port)
       writer = port.writable.getWriter();
-  
+    }
       await writer.write(new Uint8Array([ESC, 0x40, 0x02])); // reset
       await writer.write(new Uint8Array([ESC, 0x40]).buffer); // initialize
       await writer.write(new Uint8Array([ESC, 0x61,0x01]).buffer); // align center
@@ -207,7 +185,10 @@ function toGrayscale(array, width, height) {
   
       // 印字完了まで待つ
       await writer.write(new Uint8Array([US, 0x11, 0x0E]).buffer); // get device timer
+      
+      if (reader == null){
       reader = port.readable.getReader(); 
+      }
       console.log("here5")
       while (true) {
         const { value, done } = await reader.read();
@@ -218,14 +199,16 @@ function toGrayscale(array, width, height) {
         if (value[2] == 0) break;
       }
       reader.releaseLock();
-      reader = null;
+      
+      //reader = null;
   
       await writer.write(new Uint8Array([ESC, 0x40, 0x02])); // reset
   
       writer.releaseLock();
-      writer = null;
-      await port.close();
-      port = null;
+      //writer = null;
+    port.forget();
+    await port.close();
+    //port = null;
       console.log("done4");
   
       alert("印刷が完了しました！")
