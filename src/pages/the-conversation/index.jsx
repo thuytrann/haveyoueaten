@@ -68,7 +68,7 @@ export default function Index() {
             
             </div>
             <div id="google-map-container">
-              <h4>3737 Gravois Ave<br></br>St. Louis, MO, USA</h4>
+              <h4 className="blue-text">3737 Gravois Ave<br></br>St. Louis, MO, USA</h4>
               <Link passHref target="_blank" scroll={false} href="https://g.co/kgs/ZDT8qfE">
                 
               <div className="indicator indicator-blue uppercase">Google Map</div>

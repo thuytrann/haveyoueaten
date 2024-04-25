@@ -339,7 +339,7 @@ export default function Index() {
   
 
   return (
-    <div ref={container} className='fixed h-screen w-screen overflow-clip kitchen' style={{backgroundRepeat:'no-repeat', backgroundSize: '100%', background: backgroundImage }}>
+    <div ref={container} className='fixed h-screen w-screen overflow-clip kitchen' style={{transition: 'background .2s ease', backgroundRepeat:'no-repeat', backgroundSize: '100%', background: backgroundImage }}>
     
       <div className="col-frame">
     <div className="ver-col"></div>

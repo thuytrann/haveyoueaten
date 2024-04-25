@@ -66,7 +66,9 @@ export default function Loading() {
 
   
   useEffect(() => {
+    if(animation.current){
     animation.current.classList.add("z-20");
+    }
     // Initial loading state when the component mounts
     setLoading(true);
     
@@ -111,16 +113,19 @@ export default function Loading() {
             }
             
    
-            
+            if(animation.current){
             animation.current.addEventListener('click', function() {
               gsap.to(background.current, { opacity: 0, duration: 1, onComplete: () => {
                 gsap.to(foreground.current, { opacity: 0, duration: 1, onComplete: () => {
+                  if(animation.current){
                   animation.current.classList.remove("z-20");
+                  }
                   setDone(false);
                 }});
               }});
               
             })
+          }
         }
     }, 70);
 
