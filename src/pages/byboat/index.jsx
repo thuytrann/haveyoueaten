@@ -6,13 +6,38 @@ import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Draggable from "gsap/dist/Draggable";
-
+import { useMute } from '@/context/MuteContext';
 
 export default function Index() {
-
+  const { muted } = useMute();
+  const [audio, setAudio] = useState(null);
   const { timeline } = useContext(TransitionContext);
   const container = useRef(null);
-  
+  useEffect(() => {
+    document.addEventListener('click', function() {
+      var audioPlay = document.getElementById('clickAudio');
+      if(audioPlay){
+        audioPlay.play();
+
+      }
+    });
+    return () => {
+      
+    };
+  }, []);
+  useEffect(() => {
+    var audioPlay = document.getElementById('clickAudio');
+    console.log('muted', muted, audioPlay);
+
+    if (muted) {
+      audioPlay.muted = true; 
+      console.log('muted', muted, audioPlay);
+
+    }
+    else{
+      audioPlay.muted = false; 
+    }
+  }, [muted, audio])
 
   return (
     <div ref={container} className='w-screen by-boat'>
@@ -67,7 +92,8 @@ export default function Index() {
         </div>
         
         </div>
-      
+        <audio id="clickAudio" src='/audio/by-boat-sound.mp3'></audio>
+
       </div>
    
   )

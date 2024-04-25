@@ -7,11 +7,39 @@ import { useEffect, useState } from 'react';
 
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
+import { useMute } from '@/context/MuteContext';
 
 export default function Index() {
+  const { muted } = useMute();
+  const [audio, setAudio] = useState(null);
   const { timeline } = useContext(TransitionContext);
   const container = useRef(null);
+  useEffect(() => {
+    
+      var audioPlay = document.getElementById('clickAudio');
+      if(audioPlay){
+        audioPlay.play();
+
+      }
+
+    return () => {
+      
+    };
+  }, []);
+  useEffect(() => {
+    var audioPlay = document.getElementById('clickAudio');
+    console.log('muted', muted, audioPlay);
+
+    if (muted) {
+      audioPlay.muted = true; 
+      console.log('muted', muted, audioPlay);
+
+    }
+    else{
+      audioPlay.muted = false; 
+    }
+  }, [muted, audio])
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
    
@@ -89,7 +117,8 @@ export default function Index() {
               
             </div>
         </div>
-      
+        <audio id="clickAudio" src='/audio/the-conversation-sound.mp3'></audio>
+
     </div>
    
   )

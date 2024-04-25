@@ -27,11 +27,9 @@ export default function TransitionLayout({ children }) {
     
     useGSAP(() => {
         //if page is not the current page
-        console.log("1", children, displayChildren);
         
                 if (children.key != displayChildren.key) {
                     exit(); 
-                    console.log("2", children, displayChildren);
                 }
                 gsap.fromTo(background.current,{ opacity: 1 }, { opacity: 0, duration: 1, onComplete: () => {
                     gsap.fromTo(foreground.current, { opacity: 1 }, { opacity: 0, duration: 2, onComplete: () => {}});

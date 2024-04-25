@@ -21,7 +21,39 @@ export default function Loading() {
 
 
       
+  useEffect(() => {
+    
+    const customCursor = document.getElementById('cursor');
 
+  
+    const handleMouseMove = (e) => {
+      // Set custom cursor position to match mouse position
+      customCursor.style.left = e.clientX + 'px';
+      customCursor.style.top = e.clientY + 'px';
+    };
+
+    const handleMouseDown = () => {
+      // Change cursor background image when mouse is down
+      customCursor.style.backgroundImage = "url('images/cursor2.svg')";
+    };
+
+    const handleMouseUp = () => {
+      // Change cursor background image back to normal when mouse is up
+      customCursor.style.backgroundImage = "url('images/cursor2.svg')";
+    };
+
+    // Listen for mousemove, mousedown, and mouseup events on the document
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mouseup', handleMouseUp);
+
+    // Clean up event listeners when component unmounts
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, []);
 
   useEffect(() => {
     
@@ -143,6 +175,21 @@ export default function Loading() {
     
     done && ( 
       <div ref={animation} className='spinner-wrapper'>
+        <div style={{ 
+      width:  '20px',
+      height:  '20px',
+   
+    transform:  'translate(-30px,-25px)',
+    
+    backgroundSize: '100%',
+    backgroundRepeat: 'no-repeat',
+          backgroundImage:  'url(images/cursor2.svg)' ,       
+
+
+      }}
+  id="cursor">
+      
+      </div>
         <div ref={background} className='spinner-foreground'></div>
         <div ref={foreground} className='spinner-background'></div>
         

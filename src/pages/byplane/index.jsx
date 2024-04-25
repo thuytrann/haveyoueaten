@@ -9,7 +9,9 @@ import html2canvas from "html2canvas"
 import Draggable from "gsap/dist/Draggable";
 
 
+
 export default function Index() {
+  
   const container = useRef(null);
   const windowSlide = useRef(null);
   const byPlaneVN = useRef(null);
@@ -18,6 +20,8 @@ export default function Index() {
   const [inUS, setInUS] = useState(false);
  
   const [progressPlane, setProgressPlane] = useState(0);
+ 
+
  
   const videoRef = useRef();
   const canvasRef = useRef();
@@ -261,6 +265,7 @@ function toGrayscale(array, width, height) {
     gsap.to(ref.current, {opacity: 0, duration: 1})
     ref.current.style.pointerEvents = 'none';
     if (ref.current === byPlaneVN.current) {
+     
       gsap.registerPlugin(Draggable);
 
      Draggable.create("#window-slide", {
@@ -306,9 +311,10 @@ function toGrayscale(array, width, height) {
       
       
     }else if(ref.current === byPlane.current) {
+      
       console.log("hiii");
       const video = videoRef.current;
-
+      
       if (navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ video: true })
           .then((stream) => {
@@ -380,13 +386,13 @@ function toGrayscale(array, width, height) {
       <div ref={byPlaneVN} className="by-plane-stage b-y-s-vn">
       <div className="vertical-sign">
         
-        <div onClick={() => slideDissapear(byPlaneVN)} className="v-s-inner-container">
+        <div onClick={() => slideDissapear(byPlaneVN)} className="v-s-inner-container by-plane-vn">
           <p className="vertical-sign-content v-s-alley">We<br></br>l<br></br>come</p>
           <p className="vertical-sign-content v-s-alley">Aboa<br />r<br></br>d</p>
         </div>
       </div>
       </div>
-      
+     
     </div>
   );
 }

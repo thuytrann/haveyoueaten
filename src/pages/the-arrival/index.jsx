@@ -8,14 +8,51 @@ import { useEffect, useState } from 'react';
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRouter } from 'next/router';
-
+import { useMute } from '@/context/MuteContext';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Index() {
+  useEffect(() => {
+    window.onscroll = function(ev) {
+      if ((window.innerHeight + window.scrollY) >= document.querySelector('.text-container').offsetHeight) {
+          // You're at the bottom of the page
+          window.location.href = "/kitchen";
+      }
+  };
+  })
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // Empty depe
+  const { muted } = useMute();
+  const [audio, setAudio] = useState(null);
   const { timeline } = useContext(TransitionContext);
   const container = useRef(null);
   const router = useRouter();
+  useEffect(() => {
+    document.addEventListener('click', function() {
+      var audioPlay = document.getElementById('clickAudio');
+      if(audioPlay){
+        audioPlay.play();
 
+      }
+    });
+    return () => {
+      
+    };
+  }, []);
+  useEffect(() => {
+    var audioPlay = document.getElementById('clickAudio');
+    console.log('muted', muted, audioPlay);
+
+    if (muted) {
+      audioPlay.muted = true; 
+      console.log('muted', muted, audioPlay);
+
+    }
+    else{
+      audioPlay.muted = false; 
+    }
+  }, [muted, audio])
   /*useEffect(() => {
     const handleScroll = () => {
       // Check if user has scrolled to the bottom
@@ -32,7 +69,7 @@ export default function Index() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);*/
   useEffect(() => {
-
+    ScrollTrigger.refresh()
     let triggerElement = document.getElementById("supermarket-end");
     let triggerElement2 = document.getElementById("cooking-end");
      let targetElement = document.getElementById("stove-bg");
@@ -83,7 +120,7 @@ export default function Index() {
         opacity: "0",
         duration: .2,
         scrollTrigger: {
-          trigger: triggerElement2,
+          trigger: triggerElement,
           start: "top top",
           end: "bottom 50%",
           scrub: 1
@@ -100,8 +137,9 @@ export default function Index() {
 
   return (
     <div ref={container} id="the-arrival" className='w-screen'>
-       <video className="fixed-video-bg" id="the-arrival-bg" src="/video/dragonfruit-background.mp4" autoPlay muted loop></video>
+       
        <video className="fixed-video-bg" id="stove-bg" src="/video/stove-background.mp4" autoPlay muted loop></video>
+       <video className="fixed-video-bg" id="the-arrival-bg" src="/video/dragonfruit-background.mp4" autoPlay muted loop></video>
         <div className="text-container">
         <div className="interview-gradient-3"></div>
                 <div className="header-wrapper black-text">
@@ -246,7 +284,8 @@ export default function Index() {
               </div>
               
         </div>
-      
+        <audio id="clickAudio" src='/audio/the-arrival.mp3'></audio>
+
     </div>
    
   )

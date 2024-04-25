@@ -8,38 +8,71 @@ import { useEffect, useState } from 'react';
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-
+import { useMute } from '@/context/MuteContext';
 gsap.registerPlugin(ScrollTrigger);
 
 
 export default function Index() {
+  ScrollTrigger.refresh()
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // Empty depe
+  const { muted } = useMute();
+  const [audio, setAudio] = useState(null);
   const { timeline } = useContext(TransitionContext);
   const container = useRef(null);
+  useEffect(() => {
+    document.addEventListener('click', function() {
+      var audioPlay = document.getElementById('clickAudio');
+      if(audioPlay){
+        audioPlay.play();
+
+      }
+    });
+    return () => {
+      
+    };
+  }, []);
+  useEffect(() => {
+    var audioPlay = document.getElementById('clickAudio');
+    console.log('muted', muted, audioPlay);
+
+    if (muted) {
+      audioPlay.muted = true; 
+      console.log('muted', muted, audioPlay);
+
+    }
+    else{
+      audioPlay.muted = false; 
+    }
+  }, [muted, audio])
+
   useEffect(() => {
 
  let triggerElement = document.querySelector('.intro-vid-2');
  let triggerElement2 = document.querySelector('.interview-gradient-2');
-  let targetElement = document.getElementById("the-departure-bg");
+  let targetElement = document.querySelector('.bg-img-wooden');
 
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: triggerElement,
       // trigger element - viewport
       start: "top top",
-      end: "bottom 50%",
+      end: "bottom bottom",
+ 
       scrub: 1
     }
   });
 
   tl.fromTo(targetElement, {
-      opacity: "1",
-      
-      duration: .2
-    },
-    {
       opacity: "0",
       
-      duration: .2
+      duration: .1
+    },
+    {
+      opacity: "1",
+      
+      duration: .1
     }
   );
 
@@ -68,7 +101,7 @@ export default function Index() {
 
   return (
     <div ref={container} id="the-departure" className='w-screen'>
-        <div className="fixed w-screen h-screen bg-img-wooden"></div>
+        <div className="fixed top-0 z-[1] w-screen h-screen bg-img-wooden"></div>
        <video className="fixed-video-bg" id="the-departure-bg" src="/video/immigrationbg.mp4" autoPlay muted loop></video>
         <div className="text-container">
         <div className="interview-gradient"></div>
@@ -158,7 +191,8 @@ export default function Index() {
             </div>
             
         </div>
-      
+        <audio id="clickAudio" src='/audio/the-departure-sound.mp3'></audio>
+
     </div>
    
   )

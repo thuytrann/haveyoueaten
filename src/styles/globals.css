@@ -178,7 +178,7 @@ body {
 
 }
 
-.loading-title:nth-of-type(2n+1) {
+.loading-title:nth-of-type(2) {
   top: 40px;
 }
 
@@ -1591,7 +1591,7 @@ p {
 
 .by-boat-text {
   width: 100vw;
-  height: 720vh;
+  height: 790vh;
   position: relative;
   z-index: 3;
 }
@@ -1655,7 +1655,8 @@ p {
   line-height: 100%;
   letter-spacing: -.1vw;
   width: 100vw;
-  height: 650vh;
+  height: 700vh;
+  
 }
 
 .poem-line-wrapper {

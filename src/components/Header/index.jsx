@@ -9,22 +9,36 @@ export default function Index({ location }) {
   
   const { toggleMute, muted } = useMute();
   //const [activeAudio, setActiveAudio] = useState(null);
+  useEffect(() => {
+    const siteLinks = document.querySelectorAll('.site-link');
+      const currentURL = window.location.href; // Get the current URL
+      const siteItems = document.querySelectorAll('.site-item');
+
+    siteItems.forEach((siteItem) => {
+      siteItem.classList.remove('site-item-selected');
+    })
+      siteLinks.forEach((siteItem) => {
+        console.log(siteItem);
+        
+        
+        const siteLink = siteItem.href; // Get the href of the siteItem
+        console.log(siteLink === currentURL);
+
+      // If the href of the siteItem matches the current URL, add the "site-item-selected" class to it
+      if(siteLink === currentURL){
+        siteItem.firstChild.classList.add('site-item-selected');
+      }
+      else{
+        
+      }
+      })
+  })
   function openNav(event) {
+    
     if(event.currentTarget.classList.contains('site-link')){
       //window.location.reload();
       console.log(event.currentTarget.children[0]);
-      const siteItems = document.querySelectorAll('.site-item');
-      siteItems.forEach((siteItem) => {
-        console.log("selected", siteItem == event.currentTarget.children[0]);
-        if(siteItem == event.currentTarget.children[0]){
-          siteItem.classList.add('site-item-selected');
-  
-        }
-        else{
-          siteItem.classList.remove('site-item-selected');
-  
-        }
-      })
+      
     }
     
    
@@ -107,7 +121,7 @@ export default function Index({ location }) {
           <div className="logo-text script outline-text">Have you <br></br>eaTen?</div>
           <div className="site-map-container">
           <Link className="site-link" onClick={openNav} scroll={false} href="/">
-          <div className="site-item site-item-selected" id="s-m-alleyway">Alleyway</div>
+          <div className="site-item" id="s-m-alleyway">Alleyway</div>
           </Link>
           <Link className="site-link" onClick={openNav} scroll={false} href="/livingroom" exact>
           <div className="site-item" id="s-m-livingroom">Living room</div>
