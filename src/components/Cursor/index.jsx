@@ -4,7 +4,7 @@ import { useContext, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { TransitionContext } from '@/context/TransitionContext';
 import gsap from "gsap";
-import { set } from 'react-hook-form';
+
 
 export default function Cursor() {
     const router = useRouter(); // Get the current route
