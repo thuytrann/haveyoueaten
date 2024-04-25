@@ -100,39 +100,7 @@ export default function Index() {
     setCursorImage(false);
   };
 
-  useEffect(() => {
-    const customCursor = document.getElementById('cursor');
-
   
-    const handleMouseMove = (e) => {
-      // Set custom cursor position to match mouse position
-      customCursor.style.left = e.clientX + 'px';
-      customCursor.style.top = e.clientY + 'px';
-    };
-
-    const handleMouseDown = () => {
-      // Change cursor background image when mouse is down
-      customCursor.style.backgroundImage = "url('images/dua.png')";
-    };
-
-    const handleMouseUp = () => {
-      // Change cursor background image back to normal when mouse is up
-      customCursor.style.backgroundImage = "url('images/dua2.png')";
-    };
-
-    // Listen for mousemove, mousedown, and mouseup events on the document
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mouseup', handleMouseUp);
-
-    // Clean up event listeners when component unmounts
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('mouseup', handleMouseUp);
-    };
-  }, []);
-
   const bowlStages = [
     'images/com-0.png',
     'images/com-1.png',
