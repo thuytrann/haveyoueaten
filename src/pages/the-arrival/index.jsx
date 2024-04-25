@@ -29,13 +29,13 @@ export default function Index() {
   const container = useRef(null);
   const router = useRouter();
   useEffect(() => {
-    document.addEventListener('click', function() {
+    //document.addEventListener('click', function() {
       var audioPlay = document.getElementById('clickAudio');
       if(audioPlay){
         audioPlay.play();
 
       }
-    });
+    //});
     return () => {
       
     };

@@ -21,6 +21,8 @@ export default function Index() {
 
   return (
     <div ref={container} className='fixed h-screen w-screen overflow-clip'>
+          <div className="transportation-question outline-text"><span class="script">H</span>ow would you like to travel?</div>
+
         <Link scroll={false} href="/byboat">
         <div className="transportation-container" id="byboat">
             
@@ -28,7 +30,7 @@ export default function Index() {
         
         </div>
         </Link>
-        <Link scroll={false} href="/transportation">
+        <Link scroll={false} href="/byplane">
         <div className="transportation-container" id="byplane">
             
             <div className=""><p  className='travel-option outline-text'>By Plane</p></div>

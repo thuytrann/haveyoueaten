@@ -20,7 +20,7 @@
 
 html {
   width: 100vw;
-  cursor: none !important;
+  
 }
 
 * {
@@ -94,6 +94,23 @@ button{
   transform: translate(-50%, -50%);
   gap: 45vw;
   overflow: clip;
+}
+
+.kitchen-guide{
+  position: absolute;
+  z-index: 9999;
+  display: flex;
+  width: 20vw;
+    height: 5vh;
+    top: 2vh;
+    margin: auto;
+    text-align: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+ 
+  gap: 2vw;
+  overflow: clip;
+  transition: display .2s ease;
 }
 
 .spinner,
@@ -1022,7 +1039,7 @@ p {
   left: 50%;
   text-align: center;
   transform: translate(-50%, 20%);
-  font-size: 24pt;
+  font-size: 3vw;
   font-weight: 600;
   color: #E1EAD7;
 }
@@ -1196,6 +1213,28 @@ p {
   left: 35vw;
 }
 
+
+.dragging-guide{
+
+
+    align-content: center;
+    font-family: "Garvis Pro";
+    text-align: center;
+    font-size: 1.5vw;
+    color: #FDF700;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000,
+     #000 1px 0 10px;
+    
+}
+
+.dragging-guide:nth-of-type(2){
+  padding: 10vh 0 0;
+}
+
 #tocom {
   top: 40vh;
   left: 57vw;
@@ -1308,6 +1347,20 @@ p {
   }
   */
 /* QUIZ PORTION */
+.quiz-end{
+  width: 13vw;
+  height: 3.5vw;
+  border-radius: .5vw;
+  border: 1px solid black;
+  background: #FDF700;
+  transition: all 0.3s ease;
+
+}
+
+.quiz-end:hover{
+  box-shadow: 0 0 10px black;
+}
+
 .quiz-container {
   display: flex;
   width: 80vw;
@@ -1385,7 +1438,7 @@ p {
   letter-spacing: -1.2px;
   font-weight: 600;
   text-align: center;
-  padding-top: 25px;
+  
   color: #FDF700;
   -webkit-text-stroke-width: 1.3px;
   -webkit-text-stroke-color: #000;
@@ -1396,7 +1449,13 @@ p {
 }
 
 .question-active {
-  display: block;
+  display: flex;
+    margin: auto 0;
+    gap: 9vh;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .quiz-question span {
@@ -1439,10 +1498,7 @@ p {
   display: flex;
   flex-direction: row;
   gap: 2vw;
-  position: absolute;
-  bottom: 3vh;
-  left: 50%;
-  transform: translate(-50%, 0);
+  
 }
 
 .btn-option {
@@ -1468,6 +1524,7 @@ p {
   flex-wrap: wrap;
   border: 1px solid black;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .btn-option:hover {
@@ -1489,12 +1546,13 @@ p {
 
 .btn-outline {
   position: absolute;
-  width: 176px;
-  height: 38px;
+  width: 12vw;
+  height: 2.6vw;
   border: 1px solid black;
   border-radius: 50%;
   top: 50%;
-  transform: translate(0, -50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #close-quiz {

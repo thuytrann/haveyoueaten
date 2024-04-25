@@ -27,13 +27,13 @@ export default function Index() {
   };
   
   useEffect(() => {
-    document.addEventListener('click', function() {
+    //document.addEventListener('click', function() {
       const audioPlay = document.getElementById('clickAudio');
       if(audioPlay != null){
         audioPlay.play();
 
       }
-    });
+    //});
     return () => {
       
     };

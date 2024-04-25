@@ -22,13 +22,13 @@ export default function Index() {
   const { timeline } = useContext(TransitionContext);
   const container = useRef(null);
   useEffect(() => {
-    document.addEventListener('click', function() {
+   //document.addEventListener('click', function() {
       var audioPlay = document.getElementById('clickAudio');
       if(audioPlay){
         audioPlay.play();
 
       }
-    });
+   // });
     return () => {
       
     };

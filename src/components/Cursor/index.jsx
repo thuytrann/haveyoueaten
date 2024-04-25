@@ -27,7 +27,7 @@ export default function Cursor() {
             customCursor.style.backgroundImage = "url('images/cursor2.svg')";
             customCursor.style.width = "20px";
             customCursor.style.height = "20px";
-            customCursor.style.transform = "translate(-30px,-25px)";
+            customCursor.style.transform = "translate(-10px,-10px)";
             customCursor.style.backgroundSize = '100%';
             customCursor.style.backgroundRepeat = 'no-repeat';
            

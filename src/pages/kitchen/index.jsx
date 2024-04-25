@@ -160,7 +160,8 @@ export default function Index() {
   };
 
   const eating = (counter) =>{
-    
+    document.querySelector('.kitchen-guide').style.display = 'none';
+
 
         if (ancom.length > 1) {
          
@@ -278,7 +279,9 @@ export default function Index() {
       bound: '#food-container',
       inertia: true,
       cursor: "none",
-      onThrowComplete: () => {
+      onDragEnd: () => {
+        document.querySelector('.kitchen-guide').style.display = 'none';
+
         console.log('onThrowComplete');
         // TODO: animation that injects selected card title
       },
@@ -290,6 +293,7 @@ export default function Index() {
     
     const handleTouchStart = () =>{
       dragContainer.current.classList.add('p-20');
+
       console.log('Touch started on dragContainer!');
     }
     dragContainer.current && (dragContainer.current.ontouchstart = handleTouchStart);
@@ -314,11 +318,12 @@ export default function Index() {
     <div className="ver-col-2"></div>
   </div>
   <div className='bg-btn-container'>
-  <button onClick={() => changeBackground("url('/images/Bango.jpeg')")} className="styled-button bg-img-wooden bg-btn-active" id="wooden"> </button>
+  <button onClick={() => changeBackground("url('/images/bango.jpeg')")} className="styled-button bg-img-wooden bg-btn-active" id="wooden"> </button>
       <button onClick={() => changeBackground("url('/images/Baninox.jpeg')")} className="styled-button bg-img-inox" id="inox"> </button>
       <button onClick={() => changeBackground("var(--pink-green)")} className="styled-button bg-img-pinkgreen" id="pinkgreen"></button>
   </div>
   
+
   <div onMouseEnter={quizEnter}
       onMouseLeave={quizLeave} className="quiz-container">
     <div className="quiz-borders">
@@ -430,24 +435,22 @@ export default function Index() {
     <div className="quiz-content question-5">
       <div className="quiz-question-container">
         <div className="quiz-question quiz-question-shadow" data-text="hat is the first thing you need to do?"><span
-            className="script" data-text="W">Y</span>ou scored ___ </div>
+            className="script" data-text="W">Y</span>ou scored {score}</div>
         <div className="quiz-question" data-text="hat is the first thing you need to do?"><span className="script"
-            data-text="W">Y</span>ou scored ___ </div>
+            data-text="W">Y</span>ou scored {score}</div>
       </div>
       <div className="quiz-answer-option">
         
-        <button className="btn-option">
-          <div className="btn-outline"></div>Get your receipt
+        <button className="quiz-end script">
+          Get your receipt
         </button>
-        <button onClick={checkAnswer} className="btn-option">
-          <div className="btn-outline"></div>Give compliments to the chef
-        </button>
+       
        
 
       </div>
     </div>
     <div onClick={closeQuiz} id="close-quiz">
-      <svg id="arrow" width="170" height="15" viewBox="0 0 170 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg id="arrow" width="12vw" height="auto" viewBox="0 0 170 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1 1L92 14L183 1" stroke-width="2" stroke="#AAB14F"/>
         </svg>
         
@@ -472,8 +475,18 @@ export default function Index() {
     </div>
   </div>
   <div id="wrong-popup" className="outline-text-2">Shame!</div>
+  <div className="kitchen-guide">
+    <div className="loading-ps">
+    <div className="dragging-guide "><span className="uppercase">*Drag </span>to set the table*</div>
+  <div className="dragging-guide"><span className="uppercase">*Tap </span>the food to eat*</div>
+    </div>
+  
+  </div>
+ 
   <div ref={dragContainer} id="food-container">
+    
     <div className="inner-food-container">
+    
       <div onClick={() => getFood(cakhoStages, cakhoCounter, setCakhoCounter)} className="drag-food-item" id="cakho">
         <img className="drag-food-img" src="images/cakhoto.png" alt=""></img>
       </div>
