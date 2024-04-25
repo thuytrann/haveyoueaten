@@ -3,7 +3,9 @@ import Header from '@/components/Header';
 import { TransitionProvider } from '@/context/TransitionContext'
 import Transition from '@/components/Transition';
 import Loading from '@/components/Loading';
+import Cursor from '@/components/Cursor';
 import { MuteProvider } from '@/context/MuteContext';
+
 
 
 export default function App({ Component, pageProps, router}) {
@@ -14,6 +16,7 @@ export default function App({ Component, pageProps, router}) {
     
 <MuteProvider>
 <TransitionProvider>
+      <Cursor />
       <Loading />
       
       <Header location={router.pathname} {...pageProps}/> 

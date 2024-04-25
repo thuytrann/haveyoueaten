@@ -35,11 +35,6 @@ export default function Index({ location }) {
   })
   function openNav(event) {
     
-    if(event.currentTarget.classList.contains('site-link')){
-      //window.location.reload();
-      console.log(event.currentTarget.children[0]);
-      
-    }
     
    
     
@@ -48,7 +43,7 @@ export default function Index({ location }) {
   
   }
 
-  useEffect(() => {
+ /* useEffect(() => {
     
     const customCursor = document.getElementById('cursor');
 
@@ -80,13 +75,13 @@ export default function Index({ location }) {
       document.removeEventListener('mousedown', handleMouseDown);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, []);
+  }, []);*/
  
 
 
   return (
     <div className='mx-8 my-6 fixed w-full z-10'>
-      <div style={{ 
+      {/*<div style={{ 
       width: location === '/kitchen' ? '400px' : '20px',
       height: location === '/kitchen' ? '600px' : '20px',
    
@@ -100,7 +95,7 @@ export default function Index({ location }) {
       }}
   id="cursor">
       
-      </div>
+    </div>*/}
       
         <div className="absolute flex gap-5 global-nav">
           
