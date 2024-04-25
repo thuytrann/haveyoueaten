@@ -8,6 +8,12 @@ export default function Index({ location }) {
   //console.log(location);
   const audioRef = useRef(null);
   const { toggleMute, muted } = useMute();
+  console.log(muted);
+  useEffect(() => {
+  if(muted){
+    document.getElementById('audio-toggle').style.opacity = '.5';
+  }
+}, [muted])
   //const [activeAudio, setActiveAudio] = useState(null);
   useEffect(() => {
     

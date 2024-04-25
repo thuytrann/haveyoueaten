@@ -12,13 +12,18 @@ import { useMute } from '@/context/MuteContext';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Index() {
+  const routerPath = useRouter();
   useEffect(() => {
+    
     window.onscroll = function(ev) {
-      if ((window.innerHeight + window.scrollY) >= document.querySelector('.text-container').offsetHeight) {
+      if(document.querySelector('.text-container')){
+        if ((window.innerHeight + window.scrollY) >= document.querySelector('.text-container').offsetHeight) {
           // You're at the bottom of the page
-          window.location.href = "/kitchen";
+          routerPath.push('/kitchen');
       }
   };
+      }
+      
   })
   useEffect(() => {
     window.scrollTo(0, 0);

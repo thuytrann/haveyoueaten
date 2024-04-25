@@ -178,8 +178,15 @@ export default function Home(/*{ params: { lng } }*/) {
        <div className="a-s-i-outline"></div>
           <div className="a-s-i-about">About</div>
           <div className="about-info-container">
-          <div className="a-s-i-this-project">This <br></br> Project</div>
-          <div className="a-s-i-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div className="a-s-i-this-project w-[20vw]">For Mẹ and Ba con</div>
+          <div className="a-s-i-info"><span className="script">“Have You Eaten?”</span> is an interactive website that explores the hidden relationship between food and immigration. In specific, through narrative story-telling and user interactivity, the site conveys how food sustains and soothes the Vietnamese diaspora. <div className="serif">CREDITS</div> 
+Images, audio and video from the interview and kitchen section were taken by Thuy Tran in January of 2023. 
+Images and audio from the alleyway, living room, boat and plane sections were sourced from Adobe Stock. 
+
+The English on this website is set in Garvis designed by James Hultquist-Todd, Proxima Nova designed by Mark Simonson, and Arial Narrow designed by Robin Nicholas and Patricia Saunders. 
+
+<div className="serif">ACKNOWLEDGEMENTS</div> 
+Thank you to my parents, Amy Auman, Lucas Drummond, Becca Leffell Koren, Jonathan Mei, 2024 Design Cohort, Sarah Wang, and Nâu Vâu. </div>
           </div>
        </div>
       </div>
@@ -220,7 +227,7 @@ export default function Home(/*{ params: { lng } }*/) {
       </svg>
 
       
-      <audio id="clickAudio" src='/audio/background-sound.mp3'></audio>
+      <audio loop id="clickAudio" src='/audio/background-sound.mp3'></audio>
     <div className="prefetch">
     <img src="images/living_room2.jpg" alt=""></img>
     </div>

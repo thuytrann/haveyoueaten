@@ -77,9 +77,12 @@ export default function Index() {
         <div className="text-container t-c-container">
             <div className="header-container outline-text-2" data-depth='0.10'>
                 <h3>Conversation</h3>
+                <div className="t-c-big">
                 <h1 className="script">C<span className="diacritics-sm">ô</span> Ho<span className="diacritics-sm">à</span>ng</h1>
                 <div className="eyebrow outline-text" id="with-eyebrow">With</div>
                
+                </div>
+                
             </div>
             
             <div className="body-text-container " data-depth='0.20'>
@@ -117,7 +120,7 @@ export default function Index() {
               
             </div>
         </div>
-        <audio id="clickAudio" src='/audio/the-conversation-sound.mp3'></audio>
+        <audio loop id="clickAudio" src='/audio/the-conversation-sound.mp3'></audio>
 
     </div>
    

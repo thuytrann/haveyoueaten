@@ -100,7 +100,7 @@ button{
   position: absolute;
   z-index: 9999;
   display: flex;
-  width: 20vw;
+  width: 35vw;
     height: 5vh;
     top: 2vh;
     margin: auto;
@@ -124,6 +124,11 @@ button{
 
 }
 
+.serif{
+  font-family: "Garvis Pro";
+
+}
+
 .loading-info-content {
   width: 120px;
   height: 100px;
@@ -136,6 +141,7 @@ button{
 }
 
 .loading-ps {
+  width: 100%;
   position: absolute;
   animation: slide 4s infinite alternate;
   transition: animation .2s ease;
@@ -649,25 +655,30 @@ p {
 }
 
 .about-container .a-s-i-about {
-  font-size: 13vw;
+  font-size: 14vw;
 
   margin-top: -5vh;
 }
 
 .about-container .a-s-i-this-project {
-  font-size: 4vw;
+  font-size: 1vw;
+  
 
-  margin-top: -5vh;
 }
 
 .about-info-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: nowrap;
   margin: auto;
-  gap: 5vw;
+  gap: 0;
   width: 80%;
+  height: 100%;
 }
 
 
@@ -681,6 +692,15 @@ p {
 .about-sign:hover {
   transform: translate(-3vw, 0);
   transition: all .2s ease;
+}
+
+.a-s-i-info{
+  
+  width: 100%;
+  height: 40%;
+  overflow-y: scroll;
+  font-size: 1vw;
+
 }
 
 
@@ -1348,7 +1368,7 @@ p {
   */
 /* QUIZ PORTION */
 .quiz-end{
-  width: 13vw;
+  width: 20vw;
   height: 3.5vw;
   border-radius: .5vw;
   border: 1px solid black;
@@ -1783,8 +1803,12 @@ p {
   transform: translateX(-15vw);
 }
 
+.t-c-big{
+  position: relative;
+}
+
 h1 {
-  font-size: 150pt;
+  font-size: 18vw;
 
 
 
@@ -1871,8 +1895,8 @@ h4 {
 
 #with-eyebrow {
   position: absolute;
-  right: calc(2vw + 435px);
-  top: 52vh;
+  right: 47%;
+  bottom: 100%;
 }
 
 .body-text-container {
@@ -1899,6 +1923,10 @@ h4 {
   width: 100vw;
   height: 100vh;
 
+}
+
+.by-plane-us{
+  opacity: 1;
 }
 
 .b-y-s-vn {
@@ -2266,15 +2294,20 @@ canvas{
   display: none;
 }
 
-#existing-image-id{
+.existing-image-container{
   position: absolute;
   top: 0;
 visibility: hidden;
-  width: 100%;
-
+  width: 30vw;
+overflow: hidden;
   border-radius: 3vw;
   border: 1px solid #000;
 }
+
+#existing-image-id{
+  margin-top: -220px;
+}
+
 
 #camera-button{
   padding: .5vw 1vw;
@@ -2294,3 +2327,13 @@ visibility: hidden;
 #camera-button:hover{
   box-shadow: 0 0 10px #000;
 }
+
+#print-img-container{
+  width: 576px;
+  
+}
+
+#print-src{
+  width: 576px;
+}
+

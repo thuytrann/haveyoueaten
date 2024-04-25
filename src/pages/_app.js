@@ -8,6 +8,7 @@ import { MuteProvider } from '@/context/MuteContext';
 
 
 
+
 export default function App({ Component, pageProps, router}) {
   //const location = useLocation(); 
   
@@ -18,7 +19,7 @@ export default function App({ Component, pageProps, router}) {
 <TransitionProvider>
       <Cursor />
       <Loading />
-      
+  
       <Header location={router.pathname} {...pageProps}/> 
       <Transition>
         

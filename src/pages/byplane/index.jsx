@@ -11,7 +11,7 @@ import Draggable from "gsap/dist/Draggable";
 
 
 export default function Index() {
-  
+  const [userName, setUsername] = useState('');
   const container = useRef(null);
   const windowSlide = useRef(null);
   const byPlaneVN = useRef(null);
@@ -20,11 +20,14 @@ export default function Index() {
   const [inUS, setInUS] = useState(false);
  
   const [progressPlane, setProgressPlane] = useState(0);
- 
+  const handleChange = (event) => {
+    setUsername(event.target.value);
+};
 
  
   const videoRef = useRef();
   const canvasRef = useRef();
+
   function clickPrint() {
     let src = document.querySelector("#print-img-container");
     console.log("done2");
@@ -105,6 +108,20 @@ function toGrayscale(array, width, height) {
   // canvas画像をグレイスケール→誤差拡散で2値化
   function getErrorDiffusionImage(cvs) {
     const ctx = cvs.getContext('2d');
+    ctx.fillStyle = "white";
+ctx.fillRect(0, 0, 400, 300);
+    ctx.font = "50px DFVN36Daysoftype";
+    ctx.fillStyle = "black";
+ctx.fillText("Travel Visa",10,80);
+ctx.font = "30px Arial";
+ctx.fillText("For " + userName,10,120);
+ctx.fillText("Issue Date: Apr 25, 2024",10,150);
+ctx.font = "20px Arial";
+ctx.fillText("You may travel around Steinberg Hall",10,180);
+ctx.fillText("during your 2-hour travel visa.",10,220);
+
+ctx.fillText("Contact Thuy Tran or Sam Fox for a Visa extension",10,250);
+
     const inputData = ctx.getImageData(0, 0, cvs.width, cvs.height).data;
   
     const output = ctx.createImageData(cvs.width, cvs.height);
@@ -239,16 +256,18 @@ function toGrayscale(array, width, height) {
     const onTakeAPhoto = () => {
       const canvas = canvasRef.current;
       const video = videoRef.current;
-      canvas.height = video.videoHeight;
-    canvas.width = video.videoWidth;
-      canvas.getContext('2d').drawImage(video, 0, 0);
+      canvas.height = video.videoHeight+300;
+    canvas.width = 576;
+    
+      canvas.getContext('2d').drawImage(video, 0, 300);
       console.log(video.videoWidth, video.videoHeight, canvas.height, canvas.width);
       const img    = canvas.toDataURL('image/png');
-      document.getElementById('existing-image-id').style.visibility = 'visible';
+      document.querySelector('.existing-image-container').style.visibility = 'visible';
       document.getElementById('print-img').src = img;
 
       document.getElementById('existing-image-id').src = img;
       document.querySelector('.enter-america').classList.add('entered');
+
       clickPrint();
     };
   
@@ -312,6 +331,8 @@ function toGrayscale(array, width, height) {
       
     }else if(ref.current === byPlane.current) {
       
+
+    
       console.log("hiii");
       const video = videoRef.current;
       
@@ -337,28 +358,44 @@ function toGrayscale(array, width, height) {
   
   return (
     <div ref={container} className='fixed h-screen w-screen overflow-clip by-plane'>
- <div id="print-img-container">
-  <img id="print-img" src="" />
- </div>
- <div id="print_src"></div>
+ 
 <div ref={byPlaneUS} className="by-plane-stage b-y-s-us">
 <div id="camera-wrapper">
-        <h5 className="my-[5vh] text-center script">Welcome to <br /> the United States</h5>
+        <h5 className="mt-[5vh] mb-[2vh] text-center script">Welcome to <br /> the United States</h5>
+        <label className="mx-auto mb-[2vh] relative " id="camera-button" >1. State your full government name: <input type="text" value={userName} onChange={handleChange} /></label>
+
         <div className="camera-container">
         <video id="camera" ref={videoRef} autoPlay></video>
       <canvas ref={canvasRef}></canvas>
+      <div className="existing-image-container">
       <img id="existing-image-id" src=""/>
+      </div>
+      
 
         </div>
       
-        <button className="mx-auto mt-[2vh] relative " id="camera-button" onClick={onTakeAPhoto}>Take A Photo For Your Global Entry</button>
+        <button className="mx-auto mt-[2vh] relative " id="camera-button" onClick={onTakeAPhoto}>2. Take A Photo For Your Global Entry</button>
 
     </div>
-    <div className="v-s-inner-container">
-          <p className="vertical-sign-content v-s-alley enter-america">Enter</p>
+    <Link scroll={false} href="/the-conversation">
+    <div className="vertical-sign enter-america">
+        
+        <div  className="v-s-inner-container ">
+          <p className="vertical-sign-content v-s-alley">Where</p>
+          <p className="vertical-sign-content v-s-alley">Next?</p>
         </div>
       </div>
+        </Link>
+    
+      </div>
       <div ref={byPlane} className="by-plane-stage b-y-s-plane">
+      <div className="kitchen-guide">
+    <div className="loading-ps">
+    <div className="dragging-guide ">Please fasten your seatbelt</div>
+  <div className="dragging-guide">Thank you for choosing Have You Eaten Airlines.</div>
+    </div>
+  
+  </div>
         <div id="window">
           <div className="window-wrapper">
           <div ref={windowSlide} id="window-slide">
@@ -392,7 +429,14 @@ function toGrayscale(array, width, height) {
         </div>
       </div>
       </div>
+      <div id="print-img-container" class="recipt">
+
      
+  <img id="print-img" src="" />
+ </div>
+ <div id="print_src">
+
+ </div>
     </div>
   );
 }

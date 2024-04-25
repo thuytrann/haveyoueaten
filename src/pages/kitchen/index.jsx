@@ -440,11 +440,11 @@ export default function Index() {
             data-text="W">Y</span>ou scored {score}</div>
       </div>
       <div className="quiz-answer-option">
-        
+        <Link scroll={false} href="/the-conversation">
         <button className="quiz-end script">
-          Get your receipt
+          Send Compliments to the Chef!
         </button>
-       
+       </Link>
        
 
       </div>

@@ -16,9 +16,9 @@ export default function Cursor() {
       
         const handleMouseMove = (e) => {
           // Set custom cursor position to match mouse position
-          customCursor.style.left = e.clientX + 'px';
-          customCursor.style.top = e.clientY + 'px';
-        };
+          customCursor.style.left = e.pageX + 'px';
+          customCursor.style.top = e.pageY + 'px';
+      };
     
        
         document.addEventListener('mousemove', handleMouseMove);

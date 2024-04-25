@@ -156,7 +156,7 @@ export default function Index() {
       </svg>
 
       
-      <audio id="clickAudio" src='/audio/background-sound.mp3'></audio>
+      <audio loop id="clickAudio" src='/audio/background-sound.mp3'></audio>
       <div className="prefetch">
     <img src="images/Bango.jpeg" alt=""></img>
     <img src="images/Baninox.jpeg" alt=""></img>
