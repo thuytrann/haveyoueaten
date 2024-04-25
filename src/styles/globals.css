@@ -110,7 +110,7 @@ button{
  
   gap: 2vw;
   overflow: clip;
-  transition: display .2s ease;
+  transition: all .2s ease;
 }
 
 .spinner,
@@ -1240,7 +1240,7 @@ p {
     align-content: center;
     font-family: "Garvis Pro";
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 3vh;
     color: #FDF700;
     text-shadow:
    -1px -1px 0 #000,  
@@ -1932,7 +1932,7 @@ h4 {
 .b-y-s-vn {
   background-image: url('/images/tansonnhat.jpg');
   background-position: bottom;
-  background-size: 100%;
+  background-size: auto 100%;
   background-repeat: no-repeat;
 }
 
@@ -1946,6 +1946,7 @@ h4 {
   background-size: 100%;
   background-repeat: no-repeat;
 }
+
 
 #window {
   width: 80vw;
@@ -2253,12 +2254,15 @@ top: -10vh;
 }
 
 .enter-america{
+  transform: translatex(10vw);
   opacity: 0;
   transition: opacity .3s ease;
+  visibility: hidden;
 }
 
 .entered{
   opacity: 1;
+  visibility: visible;
 }
 
 #camera{
@@ -2305,7 +2309,7 @@ overflow: hidden;
 }
 
 #existing-image-id{
-  margin-top: -220px;
+  margin-top: -240px;
 }
 
 

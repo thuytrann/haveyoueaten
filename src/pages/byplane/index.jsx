@@ -378,7 +378,7 @@ ctx.fillText("Contact Thuy Tran or Sam Fox for a Visa extension",10,250);
 
     </div>
     <Link scroll={false} href="/the-conversation">
-    <div className="vertical-sign enter-america">
+    <div  className="vertical-sign enter-america">
         
         <div  className="v-s-inner-container ">
           <p className="vertical-sign-content v-s-alley">Where</p>
@@ -416,7 +416,7 @@ ctx.fillText("Contact Thuy Tran or Sam Fox for a Visa extension",10,250);
     <div className="vertical-sign unboard">
         
         <div onClick={() => slideDissapear(byPlane)} className="v-s-inner-container">
-          <p className="vertical-sign-content v-s-alley">Unboard</p>
+          <p className="vertical-sign-content v-s-alley">U<br />n<br />b<br />o<br />a<br />r<br />d</p>
         </div>
       </div>
       </div>
