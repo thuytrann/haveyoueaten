@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function Document({children}) {
   return (
-    <Html lang="en">
+    <Html className="overflow-x-clip" lang="en">
       <Head />
       <body>
         <Main />

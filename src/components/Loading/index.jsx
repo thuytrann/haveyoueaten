@@ -36,7 +36,7 @@ export default function Loading() {
       
       setTimeout(() => {
         
-        console.log('between pages 1', animation, animation.current);
+        //console.log('between pages 1', animation, animation.current);
         
         }, 2000);
       // setLoading(false);
@@ -50,7 +50,7 @@ export default function Loading() {
 
     // Check if the page is reloading
     if (router.asPath !== router.route) {
-      console.log('between pages 2');
+      //console.log('between pages 2');
 
       setLoading(true);
       
@@ -66,7 +66,9 @@ export default function Loading() {
 
   
   useEffect(() => {
+    if(animation.current){
     animation.current.classList.add("z-20");
+    }
     // Initial loading state when the component mounts
     setLoading(true);
     
@@ -74,7 +76,7 @@ export default function Loading() {
     const timeout = setTimeout(() => {
       
       setLoading(false);
-      console.log('initial');
+      //console.log('initial');
       
      
   
@@ -96,11 +98,11 @@ export default function Loading() {
         setProgress(counter);
         
         if (counter === 100) {
-            console.log(animation.current)
+            //console.log(animation.current)
             clearInterval(interval);
             const loadInfo = document.querySelectorAll('.loading-ps');
             const loadItem = document.querySelectorAll('.load-item');
-            console.log(loadItem);
+            //console.log(loadItem);
             if (loadInfo) {
               loadInfo.forEach(element => {
                 element.style.animation ='none';
@@ -111,16 +113,24 @@ export default function Loading() {
             }
             
    
-            
+            if(animation.current){
             animation.current.addEventListener('click', function() {
               gsap.to(background.current, { opacity: 0, duration: 1, onComplete: () => {
                 gsap.to(foreground.current, { opacity: 0, duration: 1, onComplete: () => {
+                  gsap.to('.loading-content', { opacity: 0, duration: 1, onComplete: () => {
+                  if (router.pathname === '/') {
+
+                  }
+                  if(animation.current){
                   animation.current.classList.remove("z-20");
+                  }
                   setDone(false);
+                  }});
                 }});
               }});
               
             })
+          }
         }
     }, 70);
 
@@ -138,9 +148,10 @@ export default function Loading() {
     
     done && ( 
       <div ref={animation} className='spinner-wrapper'>
+        
         <div ref={background} className='spinner-foreground'></div>
         <div ref={foreground} className='spinner-background'></div>
-        
+        <div className="loading-content">
         <div className='spinner'>
         {initial ? (
             // Initially show the loading animation
@@ -174,19 +185,19 @@ export default function Loading() {
           </svg>
           
             </div>
-            <div className='load-item'>
-            <p>a web experience</p>
-            </div>
+            <div className='load-item'><p>Loading {progress}%</p></div>
           
             
           </div>
           </div>
           
         </div>
-        <div className='script outline-text loading-title'>HaVe you</div>
-
-        <div className='script outline-text loading-title'>EaTeN?</div>
         
+        
+        <div className='script outline-text-2 loading-title'>HaVe you</div>
+
+        <div className='script outline-text-2 loading-title'>EaTeN?</div>
+        </div>
       </div>
     )
   );
