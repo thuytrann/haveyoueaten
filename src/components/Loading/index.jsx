@@ -117,21 +117,15 @@ export default function Loading() {
             animation.current.addEventListener('click', function() {
               gsap.to(background.current, { opacity: 0, duration: 1, onComplete: () => {
                 gsap.to(foreground.current, { opacity: 0, duration: 1, onComplete: () => {
-<<<<<<< HEAD
                   gsap.to('.loading-content', { opacity: 0, duration: 1, onComplete: () => {
                   if (router.pathname === '/') {
 
                   }
-=======
->>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
                   if(animation.current){
                   animation.current.classList.remove("z-20");
                   }
                   setDone(false);
-<<<<<<< HEAD
                   }});
-=======
->>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
                 }});
               }});
               
@@ -157,11 +151,7 @@ export default function Loading() {
         
         <div ref={background} className='spinner-foreground'></div>
         <div ref={foreground} className='spinner-background'></div>
-<<<<<<< HEAD
         <div className="loading-content">
-=======
-        
->>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
         <div className='spinner'>
         {initial ? (
             // Initially show the loading animation
@@ -202,19 +192,12 @@ export default function Loading() {
           </div>
           
         </div>
-<<<<<<< HEAD
         
         
         <div className='script outline-text-2 loading-title'>HaVe you</div>
 
         <div className='script outline-text-2 loading-title'>EaTeN?</div>
         </div>
-=======
-        <div className='script outline-text-2 loading-title'>HaVe you</div>
-
-        <div className='script outline-text-2 loading-title'>EaTeN?</div>
-        
->>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
       </div>
     )
   );
