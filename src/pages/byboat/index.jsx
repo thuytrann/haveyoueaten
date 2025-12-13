@@ -81,7 +81,11 @@ export default function Index() {
         </div>
         <div className="poem-footer">
         <div className="eyebrow">diary of</div>
+<<<<<<< HEAD
         <div className="poem-bottom-title script">Crossing Sea</div>
+=======
+        <h1 className="poem-bottom-title script">Crossing Sea</h1>
+>>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
         <Link scroll={false} href="/the-conversation">
         <div className="btn px-6 py-4 absolute bottom-12 right-12">Continue<svg className="inline ml-3" xmlns="http://www.w3.org/2000/svg" width="12" height="21" viewBox="0 0 12 21" fill="none">
   <path d="M1 1L10 10.5L1 20" stroke="#FF540F" stroke-width="2"/>

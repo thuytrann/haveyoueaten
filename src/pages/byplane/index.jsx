@@ -118,10 +118,16 @@ ctx.fillText("For " + userName,10,120);
 ctx.fillText("Issue Date: Apr 25, 2024",10,150);
 ctx.font = "20px Arial";
 ctx.fillText("You may travel around Steinberg Hall",10,180);
+<<<<<<< HEAD
 ctx.fillText("during your 2-hour travel visa.",10,210);
 
 ctx.fillText("Contact Thuy Tran or Sam Fox for",10,230);
 ctx.fillText("a Visa extension",10,250);
+=======
+ctx.fillText("during your 2-hour travel visa.",10,220);
+
+ctx.fillText("Contact Thuy Tran or Sam Fox for a Visa extension",10,250);
+>>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
 
     const inputData = ctx.getImageData(0, 0, cvs.width, cvs.height).data;
   
@@ -382,8 +388,13 @@ ctx.fillText("a Visa extension",10,250);
     <div  className="vertical-sign enter-america">
         
         <div  className="v-s-inner-container ">
+<<<<<<< HEAD
           <p className="vertical-sign-content v-s-alley">W<br />h<br />e<br />r<br />e</p>
           <p className="vertical-sign-content v-s-alley">N<br />e<br />x<br />t<br />?</p>
+=======
+          <p className="vertical-sign-content v-s-alley">Where</p>
+          <p className="vertical-sign-content v-s-alley">Next?</p>
+>>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
         </div>
       </div>
         </Link>

@@ -100,7 +100,11 @@ button{
   position: absolute;
   z-index: 9999;
   display: flex;
+<<<<<<< HEAD
   width: 40vw;
+=======
+  width: 35vw;
+>>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
     height: 5vh;
     top: 2vh;
     margin: auto;
@@ -108,9 +112,15 @@ button{
   left: 50%;
   transform: translate(-50%, 0);
  
+<<<<<<< HEAD
   
   overflow: clip;
   transition: display .2s ease;
+=======
+  gap: 2vw;
+  overflow: clip;
+  transition: all .2s ease;
+>>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
 }
 
 .spinner,
@@ -144,7 +154,11 @@ button{
   width: 100%;
   position: absolute;
   animation: slide 4s infinite alternate;
+<<<<<<< HEAD
   
+=======
+  transition: animation .2s ease;
+>>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
 }
 
 .loading-ps-1 {
@@ -1252,7 +1266,11 @@ p {
 }
 
 .dragging-guide:nth-of-type(2){
+<<<<<<< HEAD
   padding: 4.7vw 0 0;
+=======
+  padding: 10vh 0 0;
+>>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
 }
 
 #tocom {
@@ -1714,10 +1732,13 @@ p {
   position: fixed;
 }
 
+<<<<<<< HEAD
 .poem-bottom-title{
   font-size: 14vw;
 }
 
+=======
+>>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
 .boat-gradient {
   position: absolute;
   z-index: 2;
@@ -1935,8 +1956,13 @@ h4 {
 
 .b-y-s-vn {
   background-image: url('/images/tansonnhat.jpg');
+<<<<<<< HEAD
   background-position: center;
   background-size: 100% auto;
+=======
+  background-position: bottom;
+  background-size: auto 100%;
+>>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
   background-repeat: no-repeat;
 }
 
@@ -2313,7 +2339,11 @@ overflow: hidden;
 }
 
 #existing-image-id{
+<<<<<<< HEAD
   margin-top: -260px;
+=======
+  margin-top: -240px;
+>>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
 }
 
 

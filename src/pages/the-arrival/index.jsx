@@ -14,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Index() {
   const routerPath = useRouter();
   useEffect(() => {
+<<<<<<< HEAD
     const handleScroll = (ev) => {
         if(document.querySelector('.text-container')){
             if ((window.innerHeight + window.scrollY) >= document.querySelector('.text-container').offsetHeight) {
@@ -30,6 +31,19 @@ export default function Index() {
         window.removeEventListener('scroll', handleScroll);
     };
 }, []);
+=======
+    
+    window.onscroll = function(ev) {
+      if(document.querySelector('.text-container')){
+        if ((window.innerHeight + window.scrollY) >= document.querySelector('.text-container').offsetHeight) {
+          // You're at the bottom of the page
+          routerPath.push('/kitchen');
+      }
+  };
+      }
+      
+  })
+>>>>>>> 8f8a0bdee8c04ec90fabbc35f8116bc5ee30cdcb
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []); // Empty depe
