@@ -65,21 +65,21 @@ export default function Home(/*{ params: { lng } }*/) {
   };
   
   function createBlueStools() {
-    // Create new bluestool element
+    
     var newBluestool = document.createElement('img');
     newBluestool.src = 'images/ghe-dau.png';
     newBluestool.className = 'bluestool';
 
-    // Generate random position
+   
     var xPosition = Math.floor(Math.random() * window.innerWidth);
     var yPosition = Math.floor(Math.random() * window.innerHeight);
 
-    // Set the position of the new bluestool
+   
      newBluestool.style.zIndex = 0;
     newBluestool.style.left = xPosition + 'px';
     newBluestool.style.top = yPosition + 'px';
 
-    // Add the new bluestool to the body
+ 
     container.current.appendChild(newBluestool);
     console.log('newBluestool', newBluestool);
 }
@@ -96,27 +96,27 @@ export default function Home(/*{ params: { lng } }*/) {
 
   
     const handleMouseMove = (e) => {
-      // Set custom cursor position to match mouse position
+     
       customCursor.style.left = e.clientX + 'px';
       customCursor.style.top = e.clientY + 'px';
     };
 
     const handleMouseDown = () => {
-      // Change cursor background image when mouse is down
+    
       customCursor.style.backgroundImage = "url('images/cursor2.svg')";
     };
 
     const handleMouseUp = () => {
-      // Change cursor background image back to normal when mouse is up
+     
       customCursor.style.backgroundImage = "url('images/cursor2.svg')";
     };
 
-    // Listen for mousemove, mousedown, and mouseup events on the document
+  
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mousedown', handleMouseDown);
     document.addEventListener('mouseup', handleMouseUp);
 
-    // Clean up event listeners when component unmounts
+
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mousedown', handleMouseDown);
